@@ -1,5 +1,5 @@
 # Guards
-<img src="https://raw.githubusercontent.com/thomasgalliker/Guards/master/Guards.NuGet/GuardsIcon.png" alt="Guards" align="right"> 
+<img src="https://raw.githubusercontent.com/thomasgalliker/Guards/master/Guards.NuGet/GuardsIcon.png" alt="Guards" align="right" height="200" width="200"> 
 This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over. It is one of the fundamentals in object oriented programming that you clearly shield your internals from invalid external signals.
 
 
