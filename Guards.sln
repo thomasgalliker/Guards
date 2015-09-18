@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.Tests", "Guards.Tests\Guards.Tests.csproj", "{0C50EB02-A366-4A14-965F-8DF1BC4605D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.NuGet", "Guards.NuGet\Guards.NuGet.csproj", "{2CF5E868-1098-4C6D-9001-27D8DC0D87BE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0DE96292-CE25-40BE-8755-5AFA61834B12} = {0DE96292-CE25-40BE-8755-5AFA61834B12}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards", "Guards\Guards.csproj", "{0DE96292-CE25-40BE-8755-5AFA61834B12}"
 EndProject

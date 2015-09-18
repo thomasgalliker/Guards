@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Guards</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>Guards</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -21,6 +21,7 @@
     windows phone winphone wp8 wpa81 win81 windowsphone android xamarin.forms xamarin.ios ios monoandroid monodroid monotouch mvvmcross mvvmlight
   </tags>
     <releaseNotes>
+      - Signed assembly
     </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <language>en-US</language>
@@ -30,9 +31,9 @@
   </metadata>
   <files>
     <!--PCL-->
-    <file src="..\Guards\bin\Release\Guards.dll" target="lib\portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10\Guards.dll" />
-    <file src="..\Guards\bin\Release\Guards.xml" target="lib\portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10\Guards.xml" />
-    <file src="..\Guards\bin\Release\Guards.pdb" target="lib\portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10\Guards.pdb" />
+    <file src="..\Guards\bin\Release\Guards.dll" target="lib\portable-net45+wp8+wpa81+win81+netcore45+monoandroid10+monotouch10+xamarin.ios10\Guards.dll" />
+    <file src="..\Guards\bin\Release\Guards.xml" target="lib\portable-net45+wp8+wpa81+win81+netcore45+monoandroid10+monotouch10+xamarin.ios10\Guards.xml" />
+    <file src="..\Guards\bin\Release\Guards.pdb" target="lib\portable-net45+wp8+wpa81+win81+netcore45+monoandroid10+monotouch10+xamarin.ios10\Guards.pdb" />
 
     <!--Xamarin.Android-->
     <file src="..\Guards\bin\Release\Guards.dll" target="lib\MonoAndroid10\Guards.dll" />
