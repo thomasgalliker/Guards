@@ -76,6 +76,8 @@
   <ItemGroup>
     <Compile Include="GuardTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stubs\DemoClass.cs" />
+    <Compile Include="Stubs\IDemoInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

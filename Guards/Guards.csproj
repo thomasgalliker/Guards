@@ -41,6 +41,7 @@
     <AssemblyOriginatorKeyFile>GuardsKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ExceptionMessages.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
