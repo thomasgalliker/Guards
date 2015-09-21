@@ -14,5 +14,10 @@ You can use this library in any .Net project which is compatible to PCL (e.g. Xa
 ### API Usage 
 to be documented
 
+#### Null checks
+#### Value range checks
+#### Reflective checks
+#### Boolean checks
+
 ### License 
 Guards is Copyright &copy; 2015 [Thomas Galliker](https://ch.linkedin.com/in/thomasgalliker). Free for non-commercial use. For commercial use please contact the author. 
