@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Linq.Expressions;
 #if NETFX_CORE
 using System.Reflection;
-
 #endif
 
 namespace Guards
@@ -12,6 +11,37 @@ namespace Guards
     [DebuggerStepThrough]
     public static class Guard
     {
+        #region Boolean checks
+        /// <summary>
+        /// Checks if the given <paramref name="expression"/> is true.
+        /// </summary>
+        /// <exception cref="ArgumentException">The <paramref name="expression" /> parameter is false.</exception>
+        public static void ArgumentIsTrue(Expression<Func<bool>> expression)
+        {
+            ArgumentIsTrueOrFalse(expression, throwCondition: false, exceptionMessage: ExceptionMessages.ArgumentIsFalse);
+        }
+
+        /// <summary>
+        /// Checks if the given <paramref name="expression"/> is false.
+        /// </summary>
+        /// <exception cref="ArgumentException">The <paramref name="expression" /> parameter is true.</exception>
+        public static void ArgumentIsFalse(Expression<Func<bool>> expression)
+        {
+            ArgumentIsTrueOrFalse(expression, throwCondition: true, exceptionMessage: ExceptionMessages.ArgumentIsTrue);
+        }
+
+        private static void ArgumentIsTrueOrFalse(Expression<Func<bool>> expression, bool throwCondition, string exceptionMessage)
+        {
+            ArgumentNotNull(() => expression);
+
+            if (expression.Compile().Invoke() == throwCondition)
+            {
+                throw new ArgumentException(exceptionMessage, ((MemberExpression)expression.Body).Member.Name);
+            }
+        }
+        #endregion
+
+        #region Null checks
         /// <summary>
         ///     Only pass single parameters through to this call via the expression e.g. Guard.ArgumentNotNull(() => param);
         /// </summary>
@@ -63,6 +93,9 @@ namespace Guards
             }
         }
 
+        #endregion
+
+        #region Numeric checks
         public static void ArgumentMustNotExceed(Expression<Func<string>> expression, int maxLength = int.MaxValue)
         {
             var stringValue = expression.Compile()();
@@ -71,36 +104,6 @@ namespace Guards
             {
                 var memberName = ((MemberExpression)expression.Body).Member.Name;
                 throw new ArgumentException("Length must not exceed " + maxLength + " number of characters", memberName);
-            }
-        }
-
-        /// <summary>
-        /// Checks if the given <paramref name="type"/> is an interface type.
-        /// </summary>
-        /// <exception cref="ArgumentException">The <paramref name="type" /> parameter is not an interface type.</exception>
-        public static void ArgumentMustBeInterface(Type type)
-        {
-            CheckIfTypeIsInterface(type, false, ExceptionMessages.ArgumentMustBeInterface);
-        }
-
-        /// <summary>
-        /// Checks if the given <paramref name="type"/> is not an interface type.
-        /// </summary>
-        /// <exception cref="ArgumentException">The <paramref name="type" /> parameter is an interface type.</exception>
-        public static void ArgumentMustNotBeInterface(Type type)
-        {
-            CheckIfTypeIsInterface(type, true, ExceptionMessages.ArgumentMustNotBeInterface);
-        }
-
-        private static void CheckIfTypeIsInterface(Type type, bool throwIfItIsAnInterface, string exceptionMessage)
-        {
-#if NETFX_CORE
-            if (type.GetTypeInfo().IsInterface == throwIfItIsAnInterface)
-#else
-            if (type.IsInterface == throwIfItIsAnInterface)
-#endif
-            {
-                throw new ArgumentException(exceptionMessage, type.Name);
             }
         }
 
@@ -130,32 +133,38 @@ namespace Guards
             }
         }
 
+        #endregion
+
+        #region Reflective checks
         /// <summary>
-        /// Checks if the given <paramref name="expression"/> is true.
+        /// Checks if the given <paramref name="type"/> is an interface type.
         /// </summary>
-        /// <exception cref="ArgumentException">The <paramref name="expression" /> parameter is false.</exception>
-        public static void ArgumentIsTrue(Expression<Func<bool>> expression)
+        /// <exception cref="ArgumentException">The <paramref name="type" /> parameter is not an interface type.</exception>
+        public static void ArgumentMustBeInterface(Type type)
         {
-            ArgumentIsTrueOrFalse(expression, throwCondition: false, exceptionMessage: ExceptionMessages.ArgumentIsFalse);
+            CheckIfTypeIsInterface(type, false, ExceptionMessages.ArgumentMustBeInterface);
         }
 
         /// <summary>
-        /// Checks if the given <paramref name="expression"/> is false.
+        /// Checks if the given <paramref name="type"/> is not an interface type.
         /// </summary>
-        /// <exception cref="ArgumentException">The <paramref name="expression" /> parameter is true.</exception>
-        public static void ArgumentIsFalse(Expression<Func<bool>> expression)
+        /// <exception cref="ArgumentException">The <paramref name="type" /> parameter is an interface type.</exception>
+        public static void ArgumentMustNotBeInterface(Type type)
         {
-            ArgumentIsTrueOrFalse(expression, throwCondition: true, exceptionMessage:ExceptionMessages.ArgumentIsFalse);
+            CheckIfTypeIsInterface(type, true, ExceptionMessages.ArgumentMustNotBeInterface);
         }
 
-        private static void ArgumentIsTrueOrFalse(Expression<Func<bool>> expression, bool throwCondition, string exceptionMessage)
+        private static void CheckIfTypeIsInterface(Type type, bool throwIfItIsAnInterface, string exceptionMessage)
         {
-            ArgumentNotNull(() => expression);
-
-            if (expression.Compile().Invoke() == throwCondition)
+#if NETFX_CORE
+            if (type.GetTypeInfo().IsInterface == throwIfItIsAnInterface)
+#else
+            if (type.IsInterface == throwIfItIsAnInterface)
+#endif
             {
-                throw new ArgumentException(exceptionMessage, ((MemberExpression)expression.Body).Member.Name);
+                throw new ArgumentException(exceptionMessage, type.Name);
             }
         }
+        #endregion
     }
 }
