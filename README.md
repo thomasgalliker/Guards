@@ -20,25 +20,31 @@ To be completed:
    </tr>
   <tr>
     <td>Boolean</td>
-    <td>Guard.IsTrue<br>
-        Guard.IsFalse</td>
+    <td>
+        Guard.ArgumentIsTrue<br>
+        Guard.ArgumentIsFalse
+    </td>
    </tr>
     <tr>
     <td>Null</td>
     <td>
-    Guard.ArgumentNull<br>
-    Guard.ArgumentNotNull<br>
-    Guard.ArgumentNotNullOrEmpty
+        Guard.ArgumentNull<br>
+        Guard.ArgumentNotNull<br>
+        Guard.ArgumentNotNullOrEmpty
     </td>
    </tr>
      <tr>
     <td>Numeric</td>
-    <td>Guard.ArgumentIsNotNegative</td>
+    <td>
+        Guard.ArgumentIsNotNegative
+    </td>
    </tr>
     <tr>
     <td>Reflective</td>
-    <td>Guard.ArgumentMustBeInterface<br>
-        Guard.ArgumentMustNotBeInterface</td>
+    <td>
+        Guard.ArgumentMustBeInterface<br>
+        Guard.ArgumentMustNotBeInterface
+    </td>
    </tr>
 </table>
 
