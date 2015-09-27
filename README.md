@@ -12,22 +12,35 @@ Use the following command to install Guards using NuGet package manager console:
 You can use this library in any .Net project which is compatible to PCL (e.g. Xamarin Android, iOS, Windows Phone, Windows Store, Universal Apps, etc.) 
 
 ### API Usage 
-to be documented
-<table style="width:100%">
+To be completed:
+<table>
    <tr>
-    <td>Category</td>
-    <td>Contained guards</td>
+    <td><b>Category</b></td>
+    <td><b>Guards</b></td>
    </tr>
   <tr>
     <td>Boolean</td>
-    <td>IsTrue</td>
+    <td>Guard.IsTrue<br>
+        Guard.IsFalse</td>
+   </tr>
+    <tr>
+    <td>Null</td>
+    <td>
+    Guard.ArgumentNull<br>
+    Guard.ArgumentNotNull<br>
+    Guard.ArgumentNotNullOrEmpty
+    </td>
+   </tr>
+     <tr>
+    <td>Numeric</td>
+    <td>Guard.ArgumentIsNotNegative</td>
+   </tr>
+    <tr>
+    <td>Reflective</td>
+    <td>Guard.ArgumentMustBeInterface<br>
+        Guard.ArgumentMustNotBeInterface</td>
    </tr>
 </table>
-
-#### Null checks
-#### Value range checks
-#### Reflective checks
-#### Boolean checks
 
 ### License 
 Guards is Copyright &copy; 2015 [Thomas Galliker](https://ch.linkedin.com/in/thomasgalliker). Free for non-commercial use. For commercial use please contact the author. 
