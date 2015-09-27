@@ -13,6 +13,23 @@ You can use this library in any .Net project which is compatible to PCL (e.g. Xa
 
 ### API Usage 
 to be documented
+| Category  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+<table style="width:100%">
+   <tr>
+    <td>Jill</td>
+     <td>Smith</td> 
+    <td>50</td>
+   </tr>
+  <tr>
+    <td>Eve</td>
+     <td>Jackson</td> 
+    <td>94</td>
+   </tr>
+</table>
 
 #### Null checks
 #### Value range checks
