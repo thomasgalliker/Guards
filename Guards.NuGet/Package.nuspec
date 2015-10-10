@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Guards</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>Guards</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -10,10 +10,10 @@
     <iconUrl>https://raw.githubusercontent.com/thomasgalliker/Guards/master/Guards.NuGet/GuardsIcon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>
-      This Guards project shall be a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.
+      This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.
     </summary>
     <description>
-      This Guards project shall be a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.
+      This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.
       It is one of the fundamentals in object oriented programming that you clearly shield your internals from invalid external signals.
     </description>
 	<tags>
