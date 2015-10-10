@@ -42,7 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ExceptionMessages.cs" />
-    <Compile Include="Guard.cs" />
+    <Compile Include="Guard.Numeric.cs" />
+    <Compile Include="Guard.Null.cs" />
+    <Compile Include="Guard.Boolean.cs" />
+    <Compile Include="Guard.Reflective.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

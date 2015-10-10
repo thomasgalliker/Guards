@@ -74,7 +74,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GuardTests.cs" />
+    <Compile Include="GuardTests.Numeric.cs" />
+    <Compile Include="GuardTests.Reflective.cs" />
+    <Compile Include="GuardTests.Null.cs" />
+    <Compile Include="GuardTests.Boolean.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stubs\DemoClass.cs" />
     <Compile Include="Stubs\IDemoInterface.cs" />

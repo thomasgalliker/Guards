@@ -2,14 +2,39 @@
 
 using FluentAssertions;
 
-using Guards.Tests.Stubs;
 
 using Xunit;
 
 namespace Guards.Tests
 {
-    public class GuardTests
+    public partial class GuardTests
     {
+        [Fact]
+        public void ArgumentNullThrowsIfNullableArgumentIsNotNull()
+        {
+            // Arrange
+            bool? testProp = false;
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentNull(() => testProp));
+
+            // Assert
+            Assert.Equal("testProp", ex.ParamName);
+        }
+
+        [Fact]
+        public void ArgumentNullThrowsIfArgumentIsNotNull()
+        {
+            // Arrange
+            string argumentName = "argument";
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentNull("value", argumentName));
+
+            // Assert
+            Assert.Equal(argumentName, ex.ParamName);
+        }
+
         [Fact]
         public void ArgumentNotNullThrowsIfNullableArgumentIsNull()
         {
@@ -185,91 +210,6 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo("argument");
-            ex.Message.Should().NotBeNullOrEmpty();
-        }
-
-        [Fact]
-        public void ArgumentMustBeInterfaceThrowsIfArgumentIsNotAnInterface()
-        {
-            // Arrange
-            Type classType = typeof(DemoClass);
-
-            // Act
-            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentMustBeInterface(classType));
-
-            // Assert
-            Assert.Equal(classType.Name, ex.ParamName);
-        }
-
-        [Fact]
-        public void ArgumentMustNotBeInterfaceThrowsIfArgumentIsAnInterface()
-        {
-            // Arrange
-            Type interfaceType = typeof(IDemoInterface);
-
-            // Act
-            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentMustNotBeInterface(interfaceType));
-
-            // Assert
-            Assert.Equal(interfaceType.Name, ex.ParamName);
-        }
-
-        [Fact]
-        public void ArgumentIsNotNegativeThrowsIfArgumentIsNegative()
-        {
-            // Arrange
-            string argumentName = "argument";
-
-            // Act
-            var ex1 = Assert.Throws<ArgumentOutOfRangeException>(() => Guard.ArgumentIsNotNegative(-1, argumentName));
-            ArgumentException ex2 = Assert.Throws<ArgumentOutOfRangeException>(() => Guard.ArgumentIsNotNegative(-1, null));
-            var ex3 = Assert.Throws<ArgumentOutOfRangeException>(() => Guard.ArgumentIsNotNegative(-1, string.Empty));
-
-            // Assert
-            Assert.Equal(argumentName, ex1.ParamName);
-            Assert.Null(ex2.ParamName);
-            Assert.Equal(string.Empty, ex3.ParamName);
-        }
-
-        [Fact]
-        public void ArgumentIsNotNegativeThrowsIfArgumentIsNegativeWithExpression()
-        {
-            // Arrange
-            int argumentValue = -1;
-
-            // Act
-            var ex = Assert.Throws<ArgumentOutOfRangeException>(() => Guard.ArgumentIsNotNegative(() => argumentValue));
-
-            // Assert
-            ex.ParamName.Should().BeEquivalentTo("argumentValue");
-            ex.Message.Should().NotBeNullOrEmpty();
-        }
-
-        [Fact]
-        public void ArgumentIsTrueThrowsArgumentExceptionIfIsFalse()
-        {
-            // Arrange
-            bool argumentValue = false;
-
-            // Act
-            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentIsTrue(() => argumentValue));
-
-            // Assert
-            ex.ParamName.Should().BeEquivalentTo("argumentValue");
-            ex.Message.Should().NotBeNullOrEmpty();
-        }
-
-        [Fact]
-        public void ArgumentIsFalseThrowsArgumentExceptionIfIsTrue()
-        {
-            // Arrange
-            bool argumentValue = true;
-
-            // Act
-            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentIsFalse(() => argumentValue));
-
-            // Assert
-            ex.ParamName.Should().BeEquivalentTo("argumentValue");
             ex.Message.Should().NotBeNullOrEmpty();
         }
     }
