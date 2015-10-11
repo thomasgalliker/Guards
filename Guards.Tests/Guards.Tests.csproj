@@ -74,6 +74,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GuardTests.String.cs" />
     <Compile Include="GuardTests.Numeric.cs" />
     <Compile Include="GuardTests.Reflective.cs" />
     <Compile Include="GuardTests.Null.cs" />

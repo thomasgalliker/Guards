@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ExceptionMessages.cs" />
     <Compile Include="Extensions\ComparableExtensions.cs" />
+    <Compile Include="Guard.String.cs" />
     <Compile Include="Guard.Numeric.cs" />
     <Compile Include="Guard.Null.cs" />
     <Compile Include="Guard.Boolean.cs" />

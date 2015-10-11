@@ -95,18 +95,6 @@ namespace Guards
             }
         }
 
-        [Obsolete("Use ArgumentIsLowerThan")]
-        public static void ArgumentMustNotExceed(Expression<Func<string>> expression, int maxLength = int.MaxValue)
-        {
-            var stringValue = expression.Compile()();
-            int length = stringValue.Length;
-            if (length > maxLength)
-            {
-                var memberName = ((MemberExpression)expression.Body).Member.Name;
-                throw new ArgumentException("Length must not exceed " + maxLength + " number of characters", memberName);
-            }
-        }
-
         /// <summary>
         ///     Verifies the <paramref name="expression" /> is not a negative number and throws an
         ///     <see cref="ArgumentOutOfRangeException" /> if it is a negative number.
