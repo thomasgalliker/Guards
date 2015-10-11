@@ -31,13 +31,11 @@ Following guards are currently available:
     <td>Null</td>
     <td>
         Guard.ArgumentNull<br>
-        Guard.ArgumentNotNull<br>
-        Guard.ArgumentNotNullOrEmpty
+        Guard.ArgumentNotNull
     </td>
     <td>
         ArgumentException<br>
-        ArgumentNullException<br>
-        ArgumentNullException or ArgumentException<br>
+        ArgumentNullException
     </td>
    </tr>
      <tr>
@@ -59,6 +57,21 @@ Following guards are currently available:
         Guard.ArgumentMustNotBeInterface
     </td>
     <td>ArgumentException</td>
+      </tr>
+    <tr>
+    <td>String</td>
+    <td>
+        Guard.ArgumentHasLength<br>
+        Guard.ArgumentHasMaxLength<br>
+        Guard.ArgumentHasMinLength<br>
+        Guard.ArgumentNotNullOrEmpty
+    </td>
+    <td>
+        ArgumentException<br>
+        ArgumentException<br>
+        ArgumentException<br>
+        ArgumentNullException or ArgumentException<br>
+    </td>
    </tr>
 </table>
 
