@@ -26,6 +26,13 @@ Following guards are currently available:
         Guard.ArgumentIsFalse
     </td>
     <td>ArgumentException</td>
+    </tr>
+    <tr>
+    <td>Enumerable</td>
+    <td>
+        Guard.ArgumentNotNullOrEmpty
+    </td>
+    <td>ArgumentException</td>
    </tr>
     <tr>
     <td>Null</td>
