@@ -36,7 +36,12 @@ To be completed:
      <tr>
     <td>Numeric</td>
     <td>
-        Guard.ArgumentIsNotNegative
+        Guard.ArgumentIsBetween<br>
+        Guard.ArgumentIsGreaterOrEqual<br>
+        Guard.ArgumentIsGreaterThan<br>
+        Guard.ArgumentIsLowerOrEqual<br>
+        Guard.ArgumentIsLowerThan<br>
+        Guard.ArgumentIsNotNegative<br>
     </td>
    </tr>
     <tr>
