@@ -12,7 +12,7 @@ Use the following command to install Guards using NuGet package manager console:
 You can use this library in any .Net project which is compatible to PCL (e.g. Xamarin Android, iOS, Windows Phone, Windows Store, Universal Apps, etc.) 
 
 ### API Usage 
-To be completed:
+Following guards are currently available:
 <table>
    <tr>
     <td><b>Category</b></td>
@@ -61,6 +61,9 @@ To be completed:
     <td>ArgumentException</td>
    </tr>
 </table>
+
+### Contribution 
+New guards are added when desired. Since this is an open source project, everyone is highly welcome to contribute and add new guards. However, the proposals should follow the existing pattern. A minimum of governance is required. Thank you for understanding.
 
 ### License 
 Guards is Copyright &copy; 2015 [Thomas Galliker](https://ch.linkedin.com/in/thomasgalliker). Free for non-commercial use. For commercial use please contact the author. 
