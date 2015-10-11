@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Linq.Expressions;
-#if NETFX_CORE
-
-#endif
 
 namespace Guards
 {

@@ -95,7 +95,7 @@ namespace Guards
             }
         }
 
-        [Obsolete]
+        [Obsolete("Use ArgumentIsLowerThan")]
         public static void ArgumentMustNotExceed(Expression<Func<string>> expression, int maxLength = int.MaxValue)
         {
             var stringValue = expression.Compile()();
