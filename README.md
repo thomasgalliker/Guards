@@ -17,6 +17,7 @@ To be completed:
    <tr>
     <td><b>Category</b></td>
     <td><b>Guards</b></td>
+    <td><b>Type of exception
    </tr>
   <tr>
     <td>Boolean</td>
@@ -24,6 +25,7 @@ To be completed:
         Guard.ArgumentIsTrue<br>
         Guard.ArgumentIsFalse
     </td>
+    <td>ArgumentException</td>
    </tr>
     <tr>
     <td>Null</td>
@@ -31,6 +33,11 @@ To be completed:
         Guard.ArgumentNull<br>
         Guard.ArgumentNotNull<br>
         Guard.ArgumentNotNullOrEmpty
+    </td>
+    <td>
+        ArgumentException<br>
+        ArgumentNullException<br>
+        ArgumentNullException or ArgumentException<br>
     </td>
    </tr>
      <tr>
@@ -43,6 +50,7 @@ To be completed:
         Guard.ArgumentIsLowerThan<br>
         Guard.ArgumentIsNotNegative<br>
     </td>
+    <td>ArgumentOutOfRangeException</td>
    </tr>
     <tr>
     <td>Reflective</td>
@@ -50,6 +58,7 @@ To be completed:
         Guard.ArgumentMustBeInterface<br>
         Guard.ArgumentMustNotBeInterface
     </td>
+    <td>ArgumentException</td>
    </tr>
 </table>
 
