@@ -11,17 +11,17 @@ namespace Guards
         /// <summary>
         /// Checks if given argument is greater than given value.
         /// </summary>
-        /// <param name="argument">Given argument</param>
+        /// <param name="expression">Given argument</param>
         /// <param name="givenValue">Given value.</param>        
-        public static void ArgumentIsGreaterThan<T>([ValidatedNotNull]Expression<Func<T>> argument, T givenValue) where T : struct, IComparable<T>
+        public static void ArgumentIsGreaterThan<T>([ValidatedNotNull]Expression<Func<T>> expression, T givenValue) where T : struct, IComparable<T>
         {
-            ArgumentNotNull(argument);
+            ArgumentNotNull(expression);
 
-            var expressionValue = argument.Compile()();
-            if (expressionValue.IsLessThanOrEqual(givenValue))
+            var propertyValue = expression.Compile()();
+            if (propertyValue.IsLessThanOrEqual(givenValue))
             {
-                var memberName = ((MemberExpression)argument.Body).Member.Name;
-                throw new ArgumentOutOfRangeException(memberName, expressionValue, string.Format(ExceptionMessages.ArgumentIsGreaterThan, givenValue));
+                var memberName = ((MemberExpression)expression.Body).Member.Name;
+                throw new ArgumentOutOfRangeException(memberName, propertyValue, string.Format(ExceptionMessages.ArgumentIsGreaterThan, givenValue));
             }
         }
 
@@ -34,11 +34,11 @@ namespace Guards
         {
             ArgumentNotNull(argument);
 
-            var expressionValue = argument.Compile()();
-            if (expressionValue.IsLessThan(givenValue))
+            var propertyValue = argument.Compile()();
+            if (propertyValue.IsLessThan(givenValue))
             {
                 var memberName = ((MemberExpression)argument.Body).Member.Name;
-                throw new ArgumentOutOfRangeException(memberName, expressionValue, string.Format(ExceptionMessages.ArgumentIsGreaterOrEqual, givenValue));
+                throw new ArgumentOutOfRangeException(memberName, propertyValue, string.Format(ExceptionMessages.ArgumentIsGreaterOrEqual, givenValue));
             }
         }
 
@@ -51,11 +51,11 @@ namespace Guards
         {
             ArgumentNotNull(argument);
 
-            var expressionValue = argument.Compile()();
-            if (expressionValue.IsGreaterOrEqual(givenValue))
+            var propertyValue = argument.Compile()();
+            if (propertyValue.IsGreaterOrEqual(givenValue))
             {
                 var memberName = ((MemberExpression)argument.Body).Member.Name;
-                throw new ArgumentOutOfRangeException(memberName, expressionValue, string.Format(ExceptionMessages.ArgumentIsLowerThan, givenValue));
+                throw new ArgumentOutOfRangeException(memberName, propertyValue, string.Format(ExceptionMessages.ArgumentIsLowerThan, givenValue));
             }
         }
 
@@ -68,11 +68,11 @@ namespace Guards
         {
             ArgumentNotNull(argument);
 
-            var expressionValue = argument.Compile()();
-            if (expressionValue.IsGreaterThan(givenValue))
+            var propertyValue = argument.Compile()();
+            if (propertyValue.IsGreaterThan(givenValue))
             {
                 var memberName = ((MemberExpression)argument.Body).Member.Name;
-                throw new ArgumentOutOfRangeException(memberName, expressionValue, string.Format(ExceptionMessages.ArgumentIsLowerOrEqual, givenValue));
+                throw new ArgumentOutOfRangeException(memberName, propertyValue, string.Format(ExceptionMessages.ArgumentIsLowerOrEqual, givenValue));
             }
         }
 
@@ -87,11 +87,11 @@ namespace Guards
         {
             ArgumentNotNull(argument);
 
-            var expressionValue = argument.Compile()();
-            if (!expressionValue.IsBetween(lowerBound, upperBound, inclusive))
+            var propertyValue = argument.Compile()();
+            if (!propertyValue.IsBetween(lowerBound, upperBound, inclusive))
             {
                 var memberName = ((MemberExpression)argument.Body).Member.Name;
-                throw new ArgumentOutOfRangeException(memberName, expressionValue, string.Format(ExceptionMessages.ArgumentIsBetween, inclusive ? "(" : "[", lowerBound, upperBound, inclusive ? ")" : "]"));
+                throw new ArgumentOutOfRangeException(memberName, propertyValue, string.Format(ExceptionMessages.ArgumentIsBetween, inclusive ? "(" : "[", lowerBound, upperBound, inclusive ? ")" : "]"));
             }
         }
 

@@ -12,7 +12,7 @@ namespace Guards
         ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(() => someParam)
         /// </example>
         /// <param name="expression">An expression containing a single string parameter e.g. () => someParam</param>
-        public static void ArgumentNull<T>(Expression<Func<T>> expression)
+        public static void ArgumentNull<T>([ValidatedNotNull]Expression<Func<T>> expression)
         {
             ArgumentNotNull(expression, "expression");
 
@@ -26,7 +26,7 @@ namespace Guards
         /// <example>
         ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(value, "value")
         /// </example>
-        public static void ArgumentNull<T>(T value, string paramName)
+        public static void ArgumentNull<T>([ValidatedNotNull]T value, string paramName)
         {
             if (value != null)
             {
@@ -41,7 +41,7 @@ namespace Guards
         ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(() => someParam)
         /// </example>
         /// <param name="expression">An expression containing a single string parameter e.g. () => someParam</param>
-        public static void ArgumentNotNull<T>(Expression<Func<T>> expression)
+        public static void ArgumentNotNull<T>([ValidatedNotNull]Expression<Func<T>> expression)
         {
             ArgumentNotNull(expression, "expression");
 
@@ -55,7 +55,7 @@ namespace Guards
         /// <example>
         ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(value, "value")
         /// </example>
-        public static void ArgumentNotNull<T>(T value, string paramName)
+        public static void ArgumentNotNull<T>([ValidatedNotNull]T value, string paramName)
         {
             if (value == null)
             {
@@ -70,7 +70,7 @@ namespace Guards
         ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(() => stringParam)
         /// </example>
         /// <param name="expression">An expression containing a single string parameter e.g. () => stringParam</param>
-        public static void ArgumentNotNullOrEmpty(Expression<Func<string>> expression)
+        public static void ArgumentNotNullOrEmpty([ValidatedNotNull]Expression<Func<string>> expression)
         {
             var compiledExpression = expression.Compile()();
             var paramName = ((MemberExpression)expression.Body).Member.Name;
@@ -81,7 +81,7 @@ namespace Guards
         /// <summary>
         ///     Checks if the given value is not null or empty.
         /// </summary>
-        public static void ArgumentNotNullOrEmpty(string value, string paramName)
+        public static void ArgumentNotNullOrEmpty([ValidatedNotNull]string value, string paramName)
         {
             if (string.IsNullOrEmpty(value))
             {
