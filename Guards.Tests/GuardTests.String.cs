@@ -166,25 +166,5 @@ namespace Guards.Tests
             ex.ParamName.Should().BeEquivalentTo("argument");
             ex.Message.Should().NotBeNullOrEmpty();
         }
-
-
-
-
-
-
-        [Fact]
-        public void ArgumentMustNotExceedThrowsArgumentExceptionTooLow()
-        {
-            // Arrange
-            const int MaxLength = 3;
-            string inputTest = "1234";
-
-            // Act
-            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentMustNotExceed(() => inputTest, MaxLength));
-
-            // Assert
-            Assert.Equal("inputTest", ex.ParamName);
-        }
-
     }
 }
