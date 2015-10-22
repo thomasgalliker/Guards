@@ -86,11 +86,11 @@ Most of the guards provide two overloads: One which takes the guarded parameter 
 ``` 
 public void AddPerson(string name, Address address)
 {
-    // Example usage of guards <b>with</b> expressions
+    // Example usage of guards with expressions
     Guard.ArgumentNotNullOrEmpty(() => name);
     Guard.ArgumentNotNull(() => address);
     
-    // Example usage of guards <b>withouot</b> expressions
+    // Example usage of guards withouot expressions
     Guard.ArgumentNotNullOrEmpty(name, "name");
     Guard.ArgumentNotNull(address, "address");
     
