@@ -11,8 +11,7 @@ Use the following command to install Guards using NuGet package manager console:
 
 You can use this library in any .Net project which is compatible to PCL (e.g. Xamarin Android, iOS, Windows Phone, Windows Store, Universal Apps, etc.) 
 
-### API Usage 
-Following guards are currently available:
+### Available Guards
 <table>
    <tr>
     <td><b>Category</b></td>
@@ -81,6 +80,23 @@ Following guards are currently available:
     </td>
    </tr>
 </table>
+
+### API Usage 
+Most of the guards provide two overloads: One which takes the guarded parameter as an expression and one that takes the guarded parameter as well as the name (as a string) of the parameter. Take whatever fits you better. Keep in mind that expressions have a minor performance drawback but give you better maintainability. It's all about trade-offs.
+``` 
+public void AddPerson(string name, Address address)
+{
+    // Example usage of guards with expressions
+    Guard.ArgumentNotNullOrEmpty(() => name);
+    Guard.ArgumentNotNull(() => address);
+    
+    // Example usage of guards withouot expressions
+    Guard.ArgumentNotNullOrEmpty(name, "name");
+    Guard.ArgumentNotNull(address, "address");
+    
+    // Further code omitted...
+}
+``` 
 
 ### Contribution 
 New guards are added when desired. Since this is an open source project, everyone is highly welcome to contribute and add new guards. However, the proposals should follow the existing pattern. A minimum of governance is required. Thank you for understanding.
