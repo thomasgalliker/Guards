@@ -20,7 +20,7 @@ namespace Guards
             var propertyValue = expression.Compile()();
             if (propertyValue.IsLessThanOrEqual(givenValue))
             {
-                var memberName = ((MemberExpression)expression.Body).Member.Name;
+                var memberName = expression.GetMemberName();
                 throw new ArgumentOutOfRangeException(memberName, propertyValue, string.Format(ExceptionMessages.ArgumentIsGreaterThan, givenValue));
             }
         }
@@ -106,7 +106,7 @@ namespace Guards
             ArgumentNotNull(expression);
 
             var argumentValue = expression.Compile()();
-            ArgumentIsNotNegative(argumentValue, ((MemberExpression)expression.Body).Member.Name);
+            ArgumentIsNotNegative(argumentValue, expression.GetMemberName());
         }
 
         /// <summary>

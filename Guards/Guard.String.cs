@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
 
+using Guards.Extensions;
+
 namespace Guards
 {
     public static partial class Guard
@@ -13,7 +15,7 @@ namespace Guards
             ArgumentNotNull(expression, "expression");
 
             var propertyValue = expression.Compile()();
-            var paramName = ((MemberExpression)expression.Body).Member.Name;
+            var paramName = expression.GetMemberName();
 
             ArgumentNotNullOrEmpty(propertyValue, paramName);
         }
@@ -44,7 +46,7 @@ namespace Guards
             int length = propertyValue.Length;
             if (length != expectedLength)
             {
-                var paramName = ((MemberExpression)expression.Body).Member.Name;
+                var paramName = expression.GetMemberName();
                 throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasLength, expectedLength, length), paramName);
             }
         }
@@ -60,7 +62,7 @@ namespace Guards
             int length = propertyValue.Length;
             if (length > maxLength)
             {
-                var paramName = ((MemberExpression)expression.Body).Member.Name;
+                var paramName = expression.GetMemberName();
                 throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMaxLength, maxLength), paramName);
             }
         }
@@ -76,7 +78,7 @@ namespace Guards
             int length = propertyValue.Length;
             if (length < minLength)
             {
-                var paramName = ((MemberExpression)expression.Body).Member.Name;
+                var paramName = expression.GetMemberName();
                 throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMinLength, minLength), paramName);
             }
         }

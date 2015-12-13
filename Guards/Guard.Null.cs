@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guards.Extensions;
+using System;
 using System.Linq.Expressions;
 
 namespace Guards
@@ -17,7 +18,9 @@ namespace Guards
             ArgumentNotNull(expression, "expression");
 
             var propertyValue = expression.Compile()();
-            ArgumentNull(propertyValue, ((MemberExpression)expression.Body).Member.Name);
+            var paramName = expression.GetMemberName();
+
+            ArgumentNull(propertyValue, paramName);
         }
 
         /// <summary>
@@ -46,7 +49,9 @@ namespace Guards
             ArgumentNotNull(expression, "expression");
 
             var propertyValue = expression.Compile()();
-            ArgumentNotNull(propertyValue, ((MemberExpression)expression.Body).Member.Name);
+            var paramName = expression.GetMemberName();
+
+            ArgumentNotNull(propertyValue, paramName);
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guards.Extensions;
+using System;
 using System.Linq.Expressions;
 
 namespace Guards
@@ -29,7 +30,8 @@ namespace Guards
 
             if (expression.Compile().Invoke() == throwCondition)
             {
-                throw new ArgumentException(exceptionMessage, ((MemberExpression)expression.Body).Member.Name);
+                var paramName = expression.GetMemberName();
+                throw new ArgumentException(exceptionMessage, paramName);
             }
         }
     }

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Guards</id>
-    <version>1.0.10</version>
+    <version>1.0.11-pre1</version>
     <title>Guards</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -22,6 +22,7 @@
   </tags>
     <releaseNotes>
       - Issue resolve: VS 2013 cannot add PCL NuGet package to compatible project due to dnxcore50 dependency
+      - Internal refactoring
     </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <language>en-US</language>
