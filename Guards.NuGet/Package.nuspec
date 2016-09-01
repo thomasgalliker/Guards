@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Guards</id>
-    <version>1.0.11</version>
+    <version>1.0.12-pre2</version>
     <title>Guards</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -21,6 +21,9 @@
     windows phone winphone wp8 wpa81 win81 windowsphone android xamarin.forms xamarin.ios ios monoandroid monodroid monotouch mvvmcross mvvmlight
   </tags>
     <releaseNotes>
+      1.0.12-pre
+      - Added new Guard.ArgumentCondition
+      
       1.0.11
       - Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
       - Internal refactoring

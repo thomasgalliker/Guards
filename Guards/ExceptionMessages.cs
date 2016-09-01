@@ -24,5 +24,7 @@ namespace Guards
         public const string ArgumentHasLength = "Expected string length is {0}, but found {1}.";
         public const string ArgumentHasMaxLength = "String length exceeds maximum of {0} characters.";
         public const string ArgumentHasMinLength = "String must have a minimum of {0} characters.";
+
+        public const string ArgumentCondition = "Given condition \"{0}\" is not met.";
     }
 }

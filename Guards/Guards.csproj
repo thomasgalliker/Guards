@@ -45,6 +45,7 @@
     <Compile Include="Extensions\ComparableExtensions.cs" />
     <Compile Include="Extensions\ExpressionExtensions.cs" />
     <Compile Include="Guard.Enumerable.cs" />
+    <Compile Include="Guard.Condition.cs" />
     <Compile Include="Guard.String.cs" />
     <Compile Include="Guard.Numeric.cs" />
     <Compile Include="Guard.Null.cs" />
