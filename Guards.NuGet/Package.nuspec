@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Guards</id>
-    <version>1.0.12-pre2</version>
+    <version>1.0.12-pre3</version>
     <title>Guards</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -23,6 +23,7 @@
     <releaseNotes>
       1.0.12-pre
       - Added new Guard.ArgumentCondition
+      - Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
       
       1.0.11
       - Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
@@ -55,6 +56,21 @@
     <file src="..\Guards\bin\Release\Guards.xml" target="lib\xamarin.ios10\Guards.xml" />
     <file src="..\Guards\bin\Release\Guards.pdb" target="lib\xamarin.ios10\Guards.pdb" />
 
+    <!--Netfx 3.5-->
+    <file src="..\Guards.Netfx\bin\net35\Release\Guards.dll" target="lib\net35\Guards.dll" />
+    <file src="..\Guards.Netfx\bin\net35\Release\Guards.xml" target="lib\net35\Guards.xml" />
+    <file src="..\Guards.Netfx\bin\net35\Release\Guards.pdb" target="lib\net35\Guards.pdb" />
+
+    <!--Netfx 4.5-->
+    <file src="..\Guards.Netfx\bin\net45\Release\Guards.dll" target="lib\net45\Guards.dll" />
+    <file src="..\Guards.Netfx\bin\net45\Release\Guards.xml" target="lib\net45\Guards.xml" />
+    <file src="..\Guards.Netfx\bin\net45\Release\Guards.pdb" target="lib\net45\Guards.pdb" />
+
+    <!--Silverlight 5-->
+    <file src="..\Guards.SL\bin\Release\Guards.dll" target="lib\sl5\Guards.dll" />
+    <file src="..\Guards.SL\bin\Release\Guards.xml" target="lib\sl5\Guards.xml" />
+    <file src="..\Guards.SL\bin\Release\Guards.pdb" target="lib\sl5\Guards.pdb" />
+    
     <!--Windows Phone 8-->
     <file src="..\Guards\bin\Release\Guards.dll" target="lib\wp8\Guards.dll" />
     <file src="..\Guards\bin\Release\Guards.xml" target="lib\wp8\Guards.xml" />
