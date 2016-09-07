@@ -1,5 +1,7 @@
 ﻿using System;
 
+using FluentAssertions;
+
 using Xunit;
 
 namespace Guards.Tests
@@ -16,7 +18,8 @@ namespace Guards.Tests
             var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentNull(() => testProp));
 
             // Assert
-            Assert.Equal("testProp", ex.ParamName);
+            ex.ParamName.Should().BeEquivalentTo("testProp");
+            ex.Message.Should().Contain("Argument must be null.");
         }
 
         [Fact]
@@ -29,7 +32,8 @@ namespace Guards.Tests
             var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentNull("value", argumentName));
 
             // Assert
-            Assert.Equal(argumentName, ex.ParamName);
+            ex.ParamName.Should().BeEquivalentTo(argumentName);
+            ex.Message.Should().Contain("Argument must be null.");
         }
 
         [Fact]
@@ -42,7 +46,8 @@ namespace Guards.Tests
             var ex = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNull(() => testProp));
 
             // Assert
-            Assert.Equal("testProp", ex.ParamName);
+            ex.ParamName.Should().BeEquivalentTo("testProp");
+            ex.Message.Should().Contain("Argument must not be null.");
         }
 
         [Fact]
@@ -55,7 +60,8 @@ namespace Guards.Tests
             var ex = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNull((string)null, argumentName));
 
             // Assert
-            Assert.Equal(argumentName, ex.ParamName);
+            ex.ParamName.Should().BeEquivalentTo(argumentName);
+            ex.Message.Should().Contain("Argument must not be null.");
         }
 
         [Fact]
@@ -66,8 +72,11 @@ namespace Guards.Tests
             var ex2 = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNull((object)null, string.Empty));
 
             // Assert
-            Assert.Null(ex1.ParamName);
-            Assert.Equal(string.Empty, ex2.ParamName);
+            ex1.ParamName.Should().BeNull();
+            ex1.Message.Should().Contain("Argument must not be null.");
+
+            ex2.ParamName.Should().BeEmpty();
+            ex2.Message.Should().Contain("Argument must not be null.");
         }
 
         [Fact]
@@ -80,7 +89,8 @@ namespace Guards.Tests
             var ex = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNull((object)null, argumentName));
 
             // Assert
-            Assert.Equal(argumentName, ex.ParamName);
+            ex.ParamName.Should().BeEquivalentTo(argumentName);
+            ex.Message.Should().Contain("Argument must not be null.");
         }
     }
 }
