@@ -1,6 +1,6 @@
-﻿using Guards.Extensions;
-using System;
+﻿using System;
 using System.Linq.Expressions;
+using Guards.Extensions;
 
 namespace Guards
 {
@@ -26,7 +26,7 @@ namespace Guards
 
         private static void ArgumentIsTrueOrFalse(Expression<Func<bool>> expression, bool throwCondition, string exceptionMessage)
         {
-            ArgumentNotNull(() => expression);
+            ArgumentNotNull(expression, nameof(expression));
 
             if (expression.Compile().Invoke() == throwCondition)
             {

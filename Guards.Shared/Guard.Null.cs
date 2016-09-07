@@ -10,12 +10,12 @@ namespace Guards
         ///     Checks if the given value is not null.
         /// </summary>
         /// <example>
-        ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(() => someParam)
+        ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNull(() => someParam)
         /// </example>
         /// <param name="expression">An expression containing a single string parameter e.g. () => someParam</param>
         public static void ArgumentNull<T>([ValidatedNotNull]Expression<Func<T>> expression)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             var paramName = expression.GetMemberName();
@@ -27,7 +27,7 @@ namespace Guards
         ///     Checks if the given value is not null.
         /// </summary>
         /// <example>
-        ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(value, "value")
+        ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNull(value, "value")
         /// </example>
         public static void ArgumentNull<T>([ValidatedNotNull]T value, string paramName)
         {
@@ -46,7 +46,7 @@ namespace Guards
         /// <param name="expression">An expression containing a single string parameter e.g. () => someParam</param>
         public static void ArgumentNotNull<T>([ValidatedNotNull]Expression<Func<T>> expression)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             var paramName = expression.GetMemberName();

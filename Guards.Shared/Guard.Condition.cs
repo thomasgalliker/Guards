@@ -14,7 +14,7 @@ namespace Guards
         /// </example>
         public static void ArgumentCondition<T>([ValidatedNotNull]Expression<Func<T>> expression, Expression<Func<T, bool>> condition)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             var paramName = expression.GetMemberName();
@@ -30,7 +30,7 @@ namespace Guards
         /// </example>
         public static void ArgumentCondition<T>([ValidatedNotNull]T value, string paramName, Expression<Func<T, bool>> condition)
         {
-            ArgumentNotNull(condition, "condition");
+            ArgumentNotNull(condition, paramName);
 
             if (!condition.Compile()(value))
             {

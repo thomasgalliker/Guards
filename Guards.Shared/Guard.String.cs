@@ -12,7 +12,7 @@ namespace Guards
         /// </summary>
         public static void ArgumentNotNullOrEmpty([ValidatedNotNull]Expression<Func<string>> expression)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             var paramName = expression.GetMemberName();
@@ -23,11 +23,11 @@ namespace Guards
         /// <summary>
         ///     Checks if the given string is not null or empty.
         /// </summary>
-        public static void ArgumentNotNullOrEmpty([ValidatedNotNull]string value, string paramName)
+        public static void ArgumentNotNullOrEmpty([ValidatedNotNull]string propertyValue, string paramName)
         {
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(propertyValue))
             {
-                ArgumentNotNull(value, paramName);
+                ArgumentNotNull(propertyValue, paramName);
 
                 throw new ArgumentException(ExceptionMessages.ArgumentMustNotBeEmpty, paramName);
             }
@@ -40,7 +40,7 @@ namespace Guards
         /// <param name="expectedLength">Expected length.</param>
         public static void ArgumentHasLength([ValidatedNotNull]Expression<Func<string>> expression, int expectedLength)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             int length = propertyValue.Length;
@@ -59,7 +59,7 @@ namespace Guards
         /// <param name="expectedLength">Expected length.</param>
         public static void ArgumentHasLength([ValidatedNotNull]string propertyValue, string paramName, int expectedLength)
         {
-            ArgumentNotNull(propertyValue, nameof(propertyValue));
+            ArgumentNotNull(propertyValue, paramName);
 
             int length = propertyValue.Length;
             if (length != expectedLength)
@@ -73,7 +73,7 @@ namespace Guards
         /// </summary>
         public static void ArgumentHasMaxLength([ValidatedNotNull]Expression<Func<string>> expression, int maxLength)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             var paramName = expression.GetMemberName();
@@ -84,11 +84,11 @@ namespace Guards
         /// <summary>
         /// Checks if the given string has a length which exceeds given max length.
         /// </summary>
-        public static void ArgumentHasMaxLength([ValidatedNotNull]string value, string paramName, int maxLength)
+        public static void ArgumentHasMaxLength([ValidatedNotNull]string propertyValue, string paramName, int maxLength)
         {
-            ArgumentNotNull(value, "value");
+            ArgumentNotNull(propertyValue, paramName);
 
-            int length = value.Length;
+            int length = propertyValue.Length;
             if (length > maxLength)
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMaxLength, maxLength, length), paramName);
@@ -100,7 +100,7 @@ namespace Guards
         /// </summary>
         public static void ArgumentHasMinLength([ValidatedNotNull]Expression<Func<string>> expression, int minLength)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             var paramName = expression.GetMemberName();
@@ -111,11 +111,11 @@ namespace Guards
         /// <summary>
         /// Checks if the given string has a length which is at least given min length long.
         /// </summary>
-        public static void ArgumentHasMinLength([ValidatedNotNull]string value, string paramName, int minLength)
+        public static void ArgumentHasMinLength([ValidatedNotNull]string propertyValue, string paramName, int minLength)
         {
-            ArgumentNotNull(value, nameof(value));
+            ArgumentNotNull(propertyValue, paramName);
 
-            var length = value.Length;
+            var length = propertyValue.Length;
             if (length < minLength)
             {
                 throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMinLength, minLength, length), paramName);

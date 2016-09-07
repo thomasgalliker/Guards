@@ -12,7 +12,7 @@ namespace Guards
         /// </summary>
         public static void ArgumentNotNullOrEmpty([ValidatedNotNull]Expression<Func<IEnumerable>> expression)
         {
-            ArgumentNotNull(expression, "expression");
+            ArgumentNotNull(expression, nameof(expression));
 
             var propertyValue = expression.Compile()();
             var paramName = expression.GetMemberName();
