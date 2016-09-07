@@ -36,8 +36,8 @@ namespace Guards
         /// <summary>
         /// Checks if the given string has the expected length
         /// </summary>
-        /// <param name="expression"></param>
-        /// <param name="expectedLength"></param>
+        /// <param name="expression">Property expression.</param>
+        /// <param name="expectedLength">Expected length.</param>
         public static void ArgumentHasLength([ValidatedNotNull]Expression<Func<string>> expression, int expectedLength)
         {
             ArgumentNotNull(expression, "expression");
@@ -52,6 +52,23 @@ namespace Guards
         }
 
         /// <summary>
+        /// Checks if the given string has the expected length
+        /// </summary>
+        /// <param name="propertyValue">Property value.</param>
+        /// <param name="paramName">Parameter name.</param>
+        /// <param name="expectedLength">Expected length.</param>
+        public static void ArgumentHasLength([ValidatedNotNull]string propertyValue, string paramName, int expectedLength)
+        {
+            ArgumentNotNull(propertyValue, nameof(propertyValue));
+
+            int length = propertyValue.Length;
+            if (length != expectedLength)
+            {
+                throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasLength, expectedLength, length), paramName);
+            }
+        }
+
+        /// <summary>
         /// Checks if the given string has a length which exceeds given max length.
         /// </summary>
         public static void ArgumentHasMaxLength([ValidatedNotNull]Expression<Func<string>> expression, int maxLength)
@@ -59,11 +76,22 @@ namespace Guards
             ArgumentNotNull(expression, "expression");
 
             var propertyValue = expression.Compile()();
-            int length = propertyValue.Length;
+            var paramName = expression.GetMemberName();
+
+             ArgumentHasMaxLength(propertyValue, paramName, maxLength);
+        }
+
+        /// <summary>
+        /// Checks if the given string has a length which exceeds given max length.
+        /// </summary>
+        public static void ArgumentHasMaxLength([ValidatedNotNull]string value, string paramName, int maxLength)
+        {
+            ArgumentNotNull(value, "value");
+
+            int length = value.Length;
             if (length > maxLength)
             {
-                var paramName = expression.GetMemberName();
-                throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMaxLength, maxLength), paramName);
+                throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMaxLength, maxLength, length), paramName);
             }
         }
 
@@ -75,18 +103,23 @@ namespace Guards
             ArgumentNotNull(expression, "expression");
 
             var propertyValue = expression.Compile()();
-            int length = propertyValue.Length;
-            if (length < minLength)
-            {
-                var paramName = expression.GetMemberName();
-                throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMinLength, minLength), paramName);
-            }
+            var paramName = expression.GetMemberName();
+
+            ArgumentHasMinLength(propertyValue, paramName, minLength);
         }
 
-        [Obsolete("Use ArgumentHasMaxLength instead.")]
-        public static void ArgumentMustNotExceed(Expression<Func<string>> expression, int maxLength = int.MaxValue)
+        /// <summary>
+        /// Checks if the given string has a length which is at least given min length long.
+        /// </summary>
+        public static void ArgumentHasMinLength([ValidatedNotNull]string value, string paramName, int minLength)
         {
-            throw new NotSupportedException("This method is no longer supported. Use ArgumentHasMaxLength instead.");
+            ArgumentNotNull(value, nameof(value));
+
+            var length = value.Length;
+            if (length < minLength)
+            {
+                throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMinLength, minLength, length), paramName);
+            }
         }
     }
 }

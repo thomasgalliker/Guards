@@ -20,7 +20,7 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo(argumentName);
-            ex.Message.Should().NotBeNullOrEmpty();
+            ex.Message.Should().Contain("Argument must not be null.");
         }
 
 
@@ -35,7 +35,7 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo(argumentName);
-            ex.Message.Should().NotBeNullOrEmpty();
+            ex.Message.Should().Contain("Argument must not be empty.");
         }
 
         [Fact]
@@ -105,7 +105,7 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo("argument");
-            ex.Message.Should().NotBeNullOrEmpty();
+            ex.Message.Should().Contain("Argument must not be null.");
         }
 
         [Fact]
@@ -119,11 +119,11 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo("argument");
-            ex.Message.Should().NotBeNullOrEmpty();
+            ex.Message.Should().Contain("Argument must not be empty.");
         }
 
         [Fact]
-        public void ArgumentHasLengthThrowsIfLengthDoesNotMatch()
+        public void ArgumentHasLengthThrowsIfLengthDoesNotMatchWithExpression()
         {
             // Arrange
             string argument = "123456789";
@@ -134,11 +134,26 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo("argument");
-            ex.Message.Should().NotBeNullOrEmpty();
+            ex.Message.Should().Contain("Expected string length is 10, but found 9");
         }
 
         [Fact]
-        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExcepected()
+        public void ArgumentHasLengthThrowsIfLengthDoesNotMatch()
+        {
+            // Arrange
+            string argument = "123456789";
+            int expectedLength = 10;
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentHasLength(argument, nameof(argument), expectedLength));
+
+            // Assert
+            ex.ParamName.Should().BeEquivalentTo("argument");
+            ex.Message.Should().Contain("Expected string length is 10, but found 9.");
+        }
+
+        [Fact]
+        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExcepectedWithExpression()
         {
             // Arrange
             string argument = "123456789";
@@ -149,7 +164,22 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo("argument");
-            ex.Message.Should().NotBeNullOrEmpty();
+            ex.Message.Should().Contain("String length exceeds maximum of 3 characters. Found string of length 9");
+        }
+
+        [Fact]
+        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExcepected()
+        {
+            // Arrange
+            string argument = "123456789";
+            int expectedMaxLength = 3;
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentHasMaxLength(argument, nameof(argument), expectedMaxLength));
+
+            // Assert
+            ex.ParamName.Should().BeEquivalentTo("argument");
+            ex.Message.Should().Contain("String length exceeds maximum of 3 characters. Found string of length 9");
         }
 
         [Fact]
@@ -164,7 +194,22 @@ namespace Guards.Tests
 
             // Assert
             ex.ParamName.Should().BeEquivalentTo("argument");
-            ex.Message.Should().NotBeNullOrEmpty();
+            ex.Message.Should().Contain("String must have a minimum of 3 characters. Found string of length 2.");
+        }
+
+        [Fact]
+        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExcepectedWithExpression()
+        {
+            // Arrange
+            string argument = "12";
+            int expectedMinLength = 3;
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentHasMinLength(argument, nameof(argument), expectedMinLength));
+
+            // Assert
+            ex.ParamName.Should().BeEquivalentTo("argument");
+            ex.Message.Should().Contain("String must have a minimum of 3 characters. Found string of length 2.");
         }
     }
 }

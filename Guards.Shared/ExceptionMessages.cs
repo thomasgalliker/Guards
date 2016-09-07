@@ -22,8 +22,8 @@ namespace Guards
 
         public const string ArgumentMustNotBeEmpty = "Argument must not be empty.";
         public const string ArgumentHasLength = "Expected string length is {0}, but found {1}.";
-        public const string ArgumentHasMaxLength = "String length exceeds maximum of {0} characters.";
-        public const string ArgumentHasMinLength = "String must have a minimum of {0} characters.";
+        public const string ArgumentHasMaxLength = "String length exceeds maximum of {0} characters. Found string of length {1}.";
+        public const string ArgumentHasMinLength = "String must have a minimum of {0} characters. Found string of length {1}.";
 
         public const string ArgumentCondition = "Given condition \"{0}\" is not met.";
     }
