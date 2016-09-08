@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Guards</id>
-    <version>1.0.12-pre3</version>
+    <version>1.0.12-pre4</version>
     <title>Guards</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -23,6 +23,7 @@
     <releaseNotes>
       1.0.12-pre
       - Added new Guard.ArgumentCondition
+      - Added Guard.ArgumentHasLength, ArgumentHasMinLength and ArgumentHasMaxLength without property expressions
       - Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
       
       1.0.11
