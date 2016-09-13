@@ -21,4 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Guard.String.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ValidatedNotNullAttribute.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)GuardsKey.snk" />
+  </ItemGroup>
 </Project>
