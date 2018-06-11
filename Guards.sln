@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{B1129A12-D0AF-44D1-82C6-E14F324C8E10}"
 EndProject
@@ -11,15 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.NuGet", "Guards.NuGe
 	ProjectSection(ProjectDependencies) = postProject
 		{77E3938D-9377-45B3-8C26-470B7D59F479} = {77E3938D-9377-45B3-8C26-470B7D59F479}
 		{0DE96292-CE25-40BE-8755-5AFA61834B12} = {0DE96292-CE25-40BE-8755-5AFA61834B12}
-		{35AC4CDA-36D5-4BA3-B043-9BFA76F972A9} = {35AC4CDA-36D5-4BA3-B043-9BFA76F972A9}
 		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82} = {4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards", "Guards\Guards.csproj", "{0DE96292-CE25-40BE-8755-5AFA61834B12}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Guards.Shared", "Guards.Shared\Guards.Shared.shproj", "{C37378DC-7FB9-40A7-BB58-0855BF6C88C6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.SL", "Guards.SL\Guards.SL.csproj", "{35AC4CDA-36D5-4BA3-B043-9BFA76F972A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.Net35", "Guards.Netfx\Guards.Net35.csproj", "{77E3938D-9377-45B3-8C26-470B7D59F479}"
 EndProject
@@ -49,10 +46,6 @@ Global
 		{0DE96292-CE25-40BE-8755-5AFA61834B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE96292-CE25-40BE-8755-5AFA61834B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE96292-CE25-40BE-8755-5AFA61834B12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35AC4CDA-36D5-4BA3-B043-9BFA76F972A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35AC4CDA-36D5-4BA3-B043-9BFA76F972A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35AC4CDA-36D5-4BA3-B043-9BFA76F972A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35AC4CDA-36D5-4BA3-B043-9BFA76F972A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77E3938D-9377-45B3-8C26-470B7D59F479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77E3938D-9377-45B3-8C26-470B7D59F479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77E3938D-9377-45B3-8C26-470B7D59F479}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -67,5 +60,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2CF5E868-1098-4C6D-9001-27D8DC0D87BE} = {B1129A12-D0AF-44D1-82C6-E14F324C8E10}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F25E069-F7C5-402F-A86A-06D28517B462}
 	EndGlobalSection
 EndGlobal
