@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.Net35", "Guards.Netf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.Net45", "Guards.Netfx\Guards.Net45.csproj", "{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.NetStandard", "Guards.NetStandard\Guards.NetStandard.csproj", "{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Guards.Shared\Guards.Shared.projitems*{0de96292-ce25-40be-8755-5afa61834b12}*SharedItemsImports = 4
@@ -54,6 +56,10 @@ Global
 		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Guards")]
-[assembly: AssemblyCopyright("Copyright © 2016")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
@@ -23,5 +23,5 @@ using System.Resources;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.14")]
-[assembly: AssemblyFileVersion("1.0.14")]
+[assembly: AssemblyVersion("1.0.15")]
+[assembly: AssemblyFileVersion("1.0.15-pre1")]

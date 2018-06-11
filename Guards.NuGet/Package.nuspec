@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Guards</id>
-    <version>1.0.14</version>
+    <version>1.0.15-pre1</version>
     <title>Guards</title>
     <authors>Thomas Galliker</authors>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
@@ -21,20 +21,24 @@
     windows phone winphone wp8 wpa81 win81 windowsphone android xamarin.forms xamarin.ios ios monoandroid monodroid monotouch mvvmcross mvvmlight
   </tags>
     <releaseNotes>
-      1.0.14
-      - Update AssemblyInfos
+1.0.15
+- Add support for .Net Standard 1.0
+- Remove Silverlight support
+
+1.0.14
+- Update AssemblyInfos
       
-      1.0.13
-      - Strong-name signing of all Guards.dll assemblies
+1.0.13
+- Strong-name signing of all Guards.dll assemblies
       
-      1.0.12
-      - Added new Guard.ArgumentCondition
-      - Added Guard.ArgumentHasLength, ArgumentHasMinLength and ArgumentHasMaxLength without property expressions
-      - Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
+1.0.12
+- Added new Guard.ArgumentCondition
+- Added Guard.ArgumentHasLength, ArgumentHasMinLength and ArgumentHasMaxLength without property expressions
+- Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
       
-      1.0.11
-      - Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
-      - Internal refactoring
+1.0.11
+- Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
+- Internal refactoring
     </releaseNotes>
     <copyright>Copyright 2016</copyright>
     <language>en-US</language>
@@ -53,11 +57,6 @@
     <file src="..\Guards\bin\Release\Guards.xml" target="lib\MonoAndroid10\Guards.xml" />
     <file src="..\Guards\bin\Release\Guards.pdb" target="lib\MonoAndroid10\Guards.pdb" />
 
-    <!--Xamarin.iOS Classic API-->
-    <file src="..\Guards\bin\Release\Guards.dll" target="lib\MonoTouch10\Guards.dll" />
-    <file src="..\Guards\bin\Release\Guards.xml" target="lib\MonoTouch10\Guards.xml" />
-    <file src="..\Guards\bin\Release\Guards.pdb" target="lib\MonoTouch10\Guards.pdb" />
-
     <!--Xamarin.iOS Unified API-->
     <file src="..\Guards\bin\Release\Guards.dll" target="lib\xamarin.ios10\Guards.dll" />
     <file src="..\Guards\bin\Release\Guards.xml" target="lib\xamarin.ios10\Guards.xml" />
@@ -73,25 +72,10 @@
     <file src="..\Guards.Netfx\bin\net45\Release\Guards.xml" target="lib\net45\Guards.xml" />
     <file src="..\Guards.Netfx\bin\net45\Release\Guards.pdb" target="lib\net45\Guards.pdb" />
 
-    <!--Silverlight 5-->
-    <file src="..\Guards.SL\bin\Release\Guards.dll" target="lib\sl5\Guards.dll" />
-    <file src="..\Guards.SL\bin\Release\Guards.xml" target="lib\sl5\Guards.xml" />
-    <file src="..\Guards.SL\bin\Release\Guards.pdb" target="lib\sl5\Guards.pdb" />
-    
-    <!--Windows Phone 8-->
-    <file src="..\Guards\bin\Release\Guards.dll" target="lib\wp8\Guards.dll" />
-    <file src="..\Guards\bin\Release\Guards.xml" target="lib\wp8\Guards.xml" />
-    <file src="..\Guards\bin\Release\Guards.pdb" target="lib\wp8\Guards.pdb" />
-
-    <!--Windows Phone 8.1-->
-    <file src="..\Guards\bin\Release\Guards.dll" target="lib\wpa81\Guards.dll" />
-    <file src="..\Guards\bin\Release\Guards.xml" target="lib\wpa81\Guards.xml" />
-    <file src="..\Guards\bin\Release\Guards.pdb" target="lib\wpa81\Guards.pdb" />
-    
-    <!--Windows Store-->
-    <file src="..\Guards\bin\Release\Guards.dll" target="lib\win81\Guards.dll" />
-    <file src="..\Guards\bin\Release\Guards.xml" target="lib\win81\Guards.xml" />
-    <file src="..\Guards\bin\Release\Guards.pdb" target="lib\win81\Guards.pdb" />
+    <!--Net Standard 1.0-->
+    <file src="..\Guards.NetStandard\bin\Release\netstandard1.0\Guards.dll" target="lib\netstandard1.0\Guards.dll" />
+    <file src="..\Guards.NetStandard\bin\Release\netstandard1.0\Guards.pdb" target="lib\netstandard1.0\Guards.pdb" />
+    <file src="..\Guards.NetStandard\bin\Release\netstandard1.0\Guards.deps.json" target="lib\netstandard1.0\Guards.deps.json" />
 
     <file src="tools\init.ps1" target="tools\init.ps1" />
     <file src="tools\install.ps1" target="tools\install.ps1" />
