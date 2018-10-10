@@ -6,7 +6,7 @@
     <VersionPrefix>1.0.0</VersionPrefix>
     <Version>1.0.0</Version>
     <Authors>Thomas Galliker</Authors>
-    <TargetFrameworks>netstandard1.0;net35;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0;net35;net40;net45</TargetFrameworks>
     <AssemblyName>Guards</AssemblyName>
     <PackageId>Guards</PackageId>
     <PackageTags>Guards;guards;conditional;protection;protect;contract;contracts;</PackageTags>
@@ -28,9 +28,14 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <DefineConstants>$(DefineConstants);NET45</DefineConstants>
   </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <DefineConstants>$(DefineConstants);NET40</DefineConstants>
+  </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net35' ">
     <DefineConstants>$(DefineConstants);NET35</DefineConstants>
+    <FrameworkPathOverride Condition="'$(TargetFramework)' == 'net35'">C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -66,12 +71,8 @@
     <Copyright>Copyright 2018</Copyright>
     <AssemblyOriginatorKeyFile>GuardsKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <Reference Include="System" />
-  </ItemGroup>
   
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35|net40|net45'">
     <Reference Include="System" />
   </ItemGroup>
 
