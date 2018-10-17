@@ -10,7 +10,7 @@
     <AssemblyName>Guards</AssemblyName>
     <PackageId>Guards</PackageId>
     <PackageTags>Guards;guards;conditional;protection;protect;contract;contracts;</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/thomasgalliker/Guards/develop/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/thomasgalliker/Guards/raw/master/logo.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/thomasgalliker/Guards</PackageProjectUrl>
     <PackageLicenseUrl>http://opensource.org/licenses/Apache-2.0</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
