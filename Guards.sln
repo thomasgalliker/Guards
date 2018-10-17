@@ -3,70 +3,41 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{B1129A12-D0AF-44D1-82C6-E14F324C8E10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Guards", "Guards\Guards.csproj", "{0DE96292-CE25-40BE-8755-5AFA61834B12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.Tests", "Guards.Tests\Guards.Tests.csproj", "{0C50EB02-A366-4A14-965F-8DF1BC4605D3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.NuGet", "Guards.NuGet\Guards.NuGet.csproj", "{2CF5E868-1098-4C6D-9001-27D8DC0D87BE}"
-	ProjectSection(ProjectDependencies) = postProject
-		{77E3938D-9377-45B3-8C26-470B7D59F479} = {77E3938D-9377-45B3-8C26-470B7D59F479}
-		{0DE96292-CE25-40BE-8755-5AFA61834B12} = {0DE96292-CE25-40BE-8755-5AFA61834B12}
-		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4} = {F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}
-		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82} = {4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5FFA034E-76A6-42A2-94BA-355FB58B7452}"
+	ProjectSection(SolutionItems) = preProject
+		build.yml = build.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards", "Guards\Guards.csproj", "{0DE96292-CE25-40BE-8755-5AFA61834B12}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4EC76650-2685-40F8-8B95-ABA0F304AD1D}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Guards.Shared", "Guards.Shared\Guards.Shared.shproj", "{C37378DC-7FB9-40A7-BB58-0855BF6C88C6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.Net35", "Guards.Netfx\Guards.Net35.csproj", "{77E3938D-9377-45B3-8C26-470B7D59F479}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.Net45", "Guards.Netfx\Guards.Net45.csproj", "{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards.NetStandard", "Guards.NetStandard\Guards.NetStandard.csproj", "{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Guards.Tests", "Tests\Guards.Tests\Guards.Tests.csproj", "{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Guards.Shared\Guards.Shared.projitems*{0de96292-ce25-40be-8755-5afa61834b12}*SharedItemsImports = 4
-		Guards.Shared\Guards.Shared.projitems*{4dd6fcea-ad5a-4bc2-b787-1bbc8678ea82}*SharedItemsImports = 4
-		Guards.Shared\Guards.Shared.projitems*{77e3938d-9377-45b3-8c26-470b7d59f479}*SharedItemsImports = 4
-		Guards.Shared\Guards.Shared.projitems*{c37378dc-7fb9-40a7-bb58-0855bf6c88c6}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0C50EB02-A366-4A14-965F-8DF1BC4605D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C50EB02-A366-4A14-965F-8DF1BC4605D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C50EB02-A366-4A14-965F-8DF1BC4605D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C50EB02-A366-4A14-965F-8DF1BC4605D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2CF5E868-1098-4C6D-9001-27D8DC0D87BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CF5E868-1098-4C6D-9001-27D8DC0D87BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CF5E868-1098-4C6D-9001-27D8DC0D87BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CF5E868-1098-4C6D-9001-27D8DC0D87BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0DE96292-CE25-40BE-8755-5AFA61834B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0DE96292-CE25-40BE-8755-5AFA61834B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE96292-CE25-40BE-8755-5AFA61834B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE96292-CE25-40BE-8755-5AFA61834B12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77E3938D-9377-45B3-8C26-470B7D59F479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77E3938D-9377-45B3-8C26-470B7D59F479}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77E3938D-9377-45B3-8C26-470B7D59F479}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77E3938D-9377-45B3-8C26-470B7D59F479}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DD6FCEA-AD5A-4BC2-B787-1BBC8678EA82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F3315BBF-34B5-4E2C-99C9-7DAAA7240BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2CF5E868-1098-4C6D-9001-27D8DC0D87BE} = {B1129A12-D0AF-44D1-82C6-E14F324C8E10}
+		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83} = {4EC76650-2685-40F8-8B95-ABA0F304AD1D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F25E069-F7C5-402F-A86A-06D28517B462}
