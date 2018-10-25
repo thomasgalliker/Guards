@@ -1,7 +1,7 @@
 # Guards
 [![Version](https://img.shields.io/nuget/v/Guards.svg)](https://www.nuget.org/packages/Guards)  [![Downloads](https://img.shields.io/nuget/dt/Guards.svg)](https://www.nuget.org/packages/Guards)
 
-<img src="https://raw.githubusercontent.com/thomasgalliker/Guards/master/Guards.NuGet/GuardsIcon.png" alt="Guards" align="right" height="200" width="200"> 
+<img src="https://github.com/thomasgalliker/Guards/raw/master/logo.png" alt="Guards" align="right" height="200" width="200"> 
 This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over. It is one of the fundamentals in object oriented programming that you clearly shield your internals from invalid external signals.
 
 
