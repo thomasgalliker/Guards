@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <metadata minClientVersion="3.3">
+    <authors>Thomas Galliker</authors>
+    <description>Check Guards package for more information.</description>
+    <developmentDependency>true</developmentDependency>
+    <iconUrl>https://raw.github.com/adamralph/liteguard/master/assets/liteguard_256.png</iconUrl>
+    <id>Guards.Source</id>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/thomasgalliker/guards</projectUrl>
+    <summary>TODO</summary>
+    <version>1.0.0</version>
+    <contentFiles>
+      <files include="cs/**/**/*.cs.pp" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="contentFiles/cs/**/*.cs.pp"  target="/" />
+  </files>
+</package>
