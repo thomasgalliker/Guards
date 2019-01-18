@@ -32,18 +32,15 @@ steps:
     VersionNumber: '$(Build.BuildNumber)'
     FileVersionNumber: '$(Build.BuildNumber)'
 
-
 - task: NuGetToolInstaller@0
   displayName: 'Use NuGet 4.4.1'
   inputs:
     versionSpec: 4.4.1
 
-
 - task: NuGetCommand@2
   displayName: 'NuGet restore'
   inputs:
     restoreSolution: '$(Parameters.solution)'
-
 
 - powershell: |
    Write-Host "##vso[task.setvariable variable=PackageVersion]$(Build.BuildNumber)"
@@ -81,17 +78,20 @@ steps:
     versioningScheme: byEnvVar
     versionEnvVar: PackageVersion
 
+- task: NuGetCommand@2
+  displayName: 'Pack NuGet Sources'
+  inputs:
+    command: custom
+    arguments: pack Guards.Sources.nuspec -Version $(PackageVersion) -NoPackageAnalysis -outputdirectory $(Build.ArtifactStagingDirectory)\artifacts
+
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
-
     Contents: |
      **\bin\$(BuildConfiguration)\**
      **\bin\*.nupkg
-
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
