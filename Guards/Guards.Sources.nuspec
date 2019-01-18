@@ -6,7 +6,6 @@
     <developmentDependency>true</developmentDependency>
     <iconUrl>https://raw.github.com/adamralph/liteguard/master/assets/liteguard_256.png</iconUrl>
     <id>Guards.Source</id>
-    <license type="expression">MIT</license>
     <projectUrl>https://github.com/thomasgalliker/guards</projectUrl>
     <summary>TODO</summary>
     <version>1.0.0</version>
