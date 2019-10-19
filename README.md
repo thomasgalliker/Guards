@@ -84,8 +84,12 @@ You can use this library in any .Net project which is compatible to PCL (e.g. Xa
 </table>
 
 ### API Usage 
-Most of the guards provide two overloads: One which takes the guarded parameter as an expression and one that takes the guarded parameter as well as the name (as a string) of the parameter. Take whatever fits you better. Keep in mind that expressions have a minor performance drawback but give you better maintainability. It's all about trade-offs.
-``` 
+The usage of Guards is very easy. 
+- Add namespace import `using Guards;`
+- Type `Guard.` and select the preferred guard method.
+
+Most of the `Guard` methods provide two overloads: One which takes the guarded parameter as an expression and one that takes the guarded parameter as well as the name (as a string) of the parameter. Take whatever fits you better. Keep in mind that expressions have a minor performance drawback but give you better maintainability. It's all about trade-offs.
+```C#
 public void AddPerson(string name, Address address)
 {
     // Example usage of guards with expressions
@@ -104,4 +108,4 @@ public void AddPerson(string name, Address address)
 New guards are added when desired. Since this is an open source project, everyone is highly welcome to contribute and add new guards. However, the proposals should follow the existing pattern. A minimum of governance is required. Thank you for understanding.
 
 ### License 
-Guards is Copyright &copy; 2016 [Thomas Galliker](https://ch.linkedin.com/in/thomasgalliker). Free for non-commercial use. For commercial use please contact the author. 
+Guards is Copyright &copy; 2019 [Thomas Galliker](https://ch.linkedin.com/in/thomasgalliker). Free for non-commercial use. For commercial use please contact the author. 
