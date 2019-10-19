@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.</Description>
@@ -6,7 +6,7 @@
     <VersionPrefix>1.0.0</VersionPrefix>
     <Version>1.0.0</Version>
     <Authors>Thomas Galliker</Authors>
-    <TargetFrameworks>netstandard1.0;net35;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;net35;net40;net45</TargetFrameworks>
     <AssemblyName>Guards</AssemblyName>
     <PackageId>Guards</PackageId>
     <PackageTags>Guards;guards;conditional;protection;protect;contract;contracts;</PackageTags>
@@ -46,10 +46,11 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>Guards</RootNamespace>
     <PackageReleaseNotes>2.0.0
-- New project structure + build integration
+- Support for .NET Standard 2.0
+- New project structure
 
 1.0.15
-- Add support for .Net Standard 1.0
+- Support for .NET Standard 1.0
 - Remove Silverlight support
 
 1.0.14
@@ -67,7 +68,7 @@
 - Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
 - Internal refactoring
 </PackageReleaseNotes>
-    <Copyright>Copyright 2018</Copyright>
+    <Copyright>Copyright 2019</Copyright>
     <AssemblyOriginatorKeyFile>GuardsKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   
