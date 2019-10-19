@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Summary>Protects your public APIs.</Summary>
     <Description>This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.</Description>
     <AssemblyTitle>Guards</AssemblyTitle>
     <VersionPrefix>1.0.0</VersionPrefix>
@@ -10,12 +11,12 @@
     <AssemblyName>Guards</AssemblyName>
     <PackageId>Guards</PackageId>
     <PackageTags>Guards;guards;conditional;protection;protect;contract;contracts;</PackageTags>
-    <PackageIconUrl>https://github.com/thomasgalliker/Guards/raw/master/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://github.com/thomasgalliker/Guards/raw/develop/logo.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/thomasgalliker/Guards</PackageProjectUrl>
     <PackageLicenseUrl>http://opensource.org/licenses/Apache-2.0</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/thomasgalliker/Guards</RepositoryUrl>
-    <NuspecFile>Guards.Sources.nuspec</NuspecFile>
+    <NuspecFile>$(NuspecFile)</NuspecFile>
     <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
     <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
     <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.0' ">$(PackageTargetFallback);netcoreapp1.0</PackageTargetFallback>
