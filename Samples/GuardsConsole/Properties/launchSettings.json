@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GuardsConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "Hello World!"
+    }
+  }
+}

@@ -10,8 +10,8 @@ namespace Guards
         public const string ArgumentMustNotBeNull = "Argument must not be null.";
         public const string ArgumentMustBeNull = "Argument must be null.";
 
-        public const string ArgumentIsTrue = "Argument must be true.";
-        public const string ArgumentIsFalse = "Argument must be false.";
+        public const string ArgumentMustBeTrue = "Argument must be true.";
+        public const string ArgumentMustBeFalse = "Argument must be false.";
 
         public const string ArgumentIsGreaterThan = "Argument must be greater than {0}.";
         public const string ArgumentIsGreaterOrEqual = "Argument must be greater or equal to {0}.";

@@ -1,19 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2011
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Guards", "Guards\Guards.csproj", "{0DE96292-CE25-40BE-8755-5AFA61834B12}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5FFA034E-76A6-42A2-94BA-355FB58B7452}"
 	ProjectSection(SolutionItems) = preProject
 		build.yml = build.yml
+		nuget.config = nuget.config
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4EC76650-2685-40F8-8B95-ABA0F304AD1D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Guards.Tests", "Tests\Guards.Tests\Guards.Tests.csproj", "{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{AE1EED66-578C-4F2B-BEE1-189C5B7A513A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuardsConsole", "Samples\GuardsConsole\GuardsConsole.csproj", "{B180328C-ED00-4D6A-AD1F-93AF83A5467B}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -32,12 +37,17 @@ Global
 		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B180328C-ED00-4D6A-AD1F-93AF83A5467B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B180328C-ED00-4D6A-AD1F-93AF83A5467B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B180328C-ED00-4D6A-AD1F-93AF83A5467B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B180328C-ED00-4D6A-AD1F-93AF83A5467B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8E5AC397-3709-48D7-8A21-E70E1DAA2B83} = {4EC76650-2685-40F8-8B95-ABA0F304AD1D}
+		{B180328C-ED00-4D6A-AD1F-93AF83A5467B} = {AE1EED66-578C-4F2B-BEE1-189C5B7A513A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F25E069-F7C5-402F-A86A-06D28517B462}
