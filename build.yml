@@ -82,13 +82,13 @@ steps:
   displayName: 'Pack NuGet PreRelease Sources'
   inputs:
     command: custom
-    arguments: pack Guards\Guards.Sources.nuspec -Version $(PackageVersionPre) -NoPackageAnalysis -outputdirectory $(Build.ArtifactStagingDirectory)\artifacts
+    arguments: pack Guards\Guards.Source.nuspec -Version $(PackageVersionPre) -NoPackageAnalysis -outputdirectory $(Build.ArtifactStagingDirectory)\artifacts
 
 - task: NuGetCommand@2
   displayName: 'Pack NuGet Prod Sources'
   inputs:
     command: custom
-    arguments: pack Guards\Guards.Sources.nuspec -Version $(PackageVersion) -NoPackageAnalysis -outputdirectory $(Build.ArtifactStagingDirectory)\artifacts
+    arguments: pack Guards\Guards.Source.nuspec -Version $(PackageVersion) -NoPackageAnalysis -outputdirectory $(Build.ArtifactStagingDirectory)\artifacts
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
