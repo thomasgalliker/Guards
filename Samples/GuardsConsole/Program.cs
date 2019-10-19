@@ -8,8 +8,8 @@ namespace GuardsConsole
         static void Main(string[] args)
         {
             Guard.ArgumentNotNull(args, nameof(args));
-            Guard.ArgumentIsTrue(args.Length == 2, nameof(args));
-            
+            //Guard.ArgumentIsTrue(args.Length == 2, nameof(args));
+
             var helloParameter = args[0];
             var worldParameter = args[1];
             Guard.ArgumentNotNull(helloParameter, nameof(helloParameter));
