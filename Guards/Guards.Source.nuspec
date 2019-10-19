@@ -1,11 +1,11 @@
-<?xml version="1.0"?>
-<package>
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="3.3">
     <id>Guards.Source</id>
     <summary>Protects your public APIs.</summary>
     <description>This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.</description>
     <authors>Thomas Galliker</authors>
-    <icon>https://github.com/thomasgalliker/Guards/raw/develop/logo.png</icon>
+    <iconUrl>https://github.com/thomasgalliker/Guards/raw/develop/logo.png</iconUrl>
     <projectUrl>https://github.com/thomasgalliker/Guards</projectUrl>
     <version>0.0.0</version>
     <developmentDependency>true</developmentDependency>
