@@ -34,7 +34,7 @@ namespace Guards.Tests
         public void ArgumentIsFalse_ThrowsArgumentExceptionIfIsTrue()
         {
             // Arrange
-            bool argumentValue = false;
+            bool argumentValue = true;
 
             // Act
             var actions = new Action[]
