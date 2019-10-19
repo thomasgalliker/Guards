@@ -42,6 +42,7 @@
     <PackageReleaseNotes>2.1.0
 - New Nuget Guards.Source which compiles in your target project
 - Support for .NET 3.5 and 4.0 depricated
+- Fix wrong exception message in ArgumentIsTrue and ArgumentIsFalse
 
 2.0.0
 - New project structure
