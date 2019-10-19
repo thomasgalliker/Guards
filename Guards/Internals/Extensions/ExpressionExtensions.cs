@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Guards.Extensions
+namespace Guards.Internals.Extensions
 {
     internal static class ExpressionExtensions
     {

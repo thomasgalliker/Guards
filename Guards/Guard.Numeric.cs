@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq.Expressions;
-
-using Guards.Extensions;
+using Guards.Internals.Extensions;
 
 namespace Guards
 {
