@@ -39,33 +39,32 @@
     <Product>Guards</Product>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>Guards</RootNamespace>
-    <PackageReleaseNotes>
-      2.1.0
-      - New Nuget Guards.Source which compiles in your target project
-      - Support for .NET 3.5 and 4.0 depricated
+    <PackageReleaseNotes>2.1.0
+- New Nuget Guards.Source which compiles in your target project
+- Support for .NET 3.5 and 4.0 depricated
 
-      2.0.0
-      - New project structure
-      - Support for .NET Standard 2.0
+2.0.0
+- New project structure
+- Support for .NET Standard 2.0
 
-      1.0.15
-      - Support for .NET Standard 1.0
-      - Support for Silverlight depricated
+1.0.15
+- Support for .NET Standard 1.0
+- Support for Silverlight depricated
 
-      1.0.14
-      - Update AssemblyInfos
+1.0.14
+- Update AssemblyInfos
 
-      1.0.13
-      - Strong-name signing of all Guards.dll assemblies
+1.0.13
+- Strong-name signing of all Guards.dll assemblies
 
-      1.0.12
-      - Added new Guard.ArgumentCondition
-      - Added Guard.ArgumentHasLength, ArgumentHasMinLength and ArgumentHasMaxLength without property expressions
-      - Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
+1.0.12
+- Added new Guard.ArgumentCondition
+- Added Guard.ArgumentHasLength, ArgumentHasMinLength and ArgumentHasMaxLength without property expressions
+- Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
 
-      1.0.11
-      - Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
-      - Internal refactoring
+1.0.11
+- Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
+- Internal refactoring
     </PackageReleaseNotes>
     <Copyright>Copyright 2019</Copyright>
     <AssemblyOriginatorKeyFile>GuardsKey.snk</AssemblyOriginatorKeyFile>
