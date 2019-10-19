@@ -5,7 +5,7 @@
     <summary>Protects your public APIs.</summary>
     <description>This Guards project is a light-weight toolbox which helps you to protect your public interfaces against invalid parameters being passed over.</description>
     <authors>Thomas Galliker</authors>
-    <packageIcon>https://github.com/thomasgalliker/Guards/raw/develop/logo.png</packageIcon>
+    <icon>https://github.com/thomasgalliker/Guards/raw/develop/logo.png</icon>
     <projectUrl>https://github.com/thomasgalliker/Guards</projectUrl>
     <version>0.0.0</version>
     <developmentDependency>true</developmentDependency>
