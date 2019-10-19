@@ -9,31 +9,47 @@ namespace Guards.Tests
     public partial class GuardTests
     {
         [Fact]
-        public void ArgumentIsTrueThrowsArgumentExceptionIfIsFalse()
+        public void ArgumentIsTrue_ThrowsArgumentExceptionIfIsFalse()
         {
             // Arrange
             bool argumentValue = false;
 
             // Act
-            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentIsTrue(() => argumentValue));
+            var actions = new Action[]
+            {
+                () => Guard.ArgumentIsTrue(argumentValue, nameof(argumentValue)),
+                () => Guard.ArgumentIsTrue(() => argumentValue)
+            };
 
             // Assert
-            ex.ParamName.Should().BeEquivalentTo("argumentValue");
-            ex.Message.Should().NotBeNullOrEmpty();
+            foreach (var action in actions)
+            {
+                var ex = Assert.Throws<ArgumentException>(action);
+                ex.ParamName.Should().BeEquivalentTo("argumentValue");
+                ex.Message.Should().Be("Argument must be true.\r\nParameter name: argumentValue");
+            }
         }
 
         [Fact]
-        public void ArgumentIsFalseThrowsArgumentExceptionIfIsTrue()
+        public void ArgumentIsFalse_ThrowsArgumentExceptionIfIsTrue()
         {
             // Arrange
             bool argumentValue = true;
 
             // Act
-            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentIsFalse(() => argumentValue));
+            var actions = new Action[]
+            {
+                () => Guard.ArgumentIsFalse(argumentValue, nameof(argumentValue)),
+                () => Guard.ArgumentIsFalse(() => argumentValue)
+            };
 
             // Assert
-            ex.ParamName.Should().BeEquivalentTo("argumentValue");
-            ex.Message.Should().NotBeNullOrEmpty();
+            foreach (var action in actions)
+            {
+                var ex = Assert.Throws<ArgumentException>(action);
+                ex.ParamName.Should().BeEquivalentTo("argumentValue");
+                ex.Message.Should().Be("Argument must be false.\r\nParameter name: argumentValue");
+            }
         }
     }
 }

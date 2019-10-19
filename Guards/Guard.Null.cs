@@ -1,6 +1,6 @@
-﻿using Guards.Extensions;
-using System;
+﻿using System;
 using System.Linq.Expressions;
+using Guards.Internals.Extensions;
 
 namespace Guards
 {
@@ -27,7 +27,7 @@ namespace Guards
         ///     Checks if the given value is not null.
         /// </summary>
         /// <example>
-        ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNull(value, "value")
+        ///     Pass the parameter and it's name, e.g. Guard.ArgumentNull(someParam, nameof(someParam))
         /// </example>
         public static void ArgumentNull<T>([ValidatedNotNull]T value, string paramName)
         {
@@ -58,7 +58,7 @@ namespace Guards
         ///     Checks if the given value is not null.
         /// </summary>
         /// <example>
-        ///     Only pass single parameters through to this call via expression, e.g. Guard.ArgumentNotNull(value, "value")
+        ///     Pass the parameter and it's name, e.g. Guard.ArgumentNotNull(someParam, nameof(someParam))
         /// </example>
         public static void ArgumentNotNull<T>([ValidatedNotNull]T value, string paramName)
         {

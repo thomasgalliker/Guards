@@ -1,18 +1,42 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Guards.Extensions;
+using Guards.Internals.Extensions;
 
 namespace Guards
 {
     public static partial class Guard
     {
         /// <summary>
+        /// Checks if the given <paramref name="value"/> is true.
+        /// </summary>
+        /// <exception cref="ArgumentException">The <paramref name="value" /> parameter is false.</exception>
+        public static void ArgumentIsTrue(bool value, string paramName)
+        {
+            if (!value)
+            {
+                throw new ArgumentException(ExceptionMessages.ArgumentMustBeTrue, paramName);
+            }
+        }
+
+        /// <summary>
+        /// Checks if the given <paramref name="value"/> is false.
+        /// </summary>
+        /// <exception cref="ArgumentException">The <paramref name="value" /> parameter is true.</exception>
+        public static void ArgumentIsFalse(bool value, string paramName)
+        {
+            if (value)
+            {
+                throw new ArgumentException(ExceptionMessages.ArgumentMustBeFalse, paramName);
+            }
+        }
+
+        /// <summary>
         /// Checks if the given <paramref name="expression"/> is true.
         /// </summary>
         /// <exception cref="ArgumentException">The <paramref name="expression" /> parameter is false.</exception>
         public static void ArgumentIsTrue([ValidatedNotNull]Expression<Func<bool>> expression)
         {
-            ArgumentIsTrueOrFalse(expression, throwCondition: false, exceptionMessage: ExceptionMessages.ArgumentIsFalse);
+            ArgumentIsTrueOrFalse(expression, throwCondition: false, exceptionMessage: ExceptionMessages.ArgumentMustBeTrue);
         }
 
         /// <summary>
@@ -21,7 +45,7 @@ namespace Guards
         /// <exception cref="ArgumentException">The <paramref name="expression" /> parameter is true.</exception>
         public static void ArgumentIsFalse([ValidatedNotNull]Expression<Func<bool>> expression)
         {
-            ArgumentIsTrueOrFalse(expression, throwCondition: true, exceptionMessage: ExceptionMessages.ArgumentIsTrue);
+            ArgumentIsTrueOrFalse(expression, throwCondition: true, exceptionMessage: ExceptionMessages.ArgumentMustBeFalse);
         }
 
         private static void ArgumentIsTrueOrFalse(Expression<Func<bool>> expression, bool throwCondition, string exceptionMessage)
