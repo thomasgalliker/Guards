@@ -7,7 +7,9 @@ using System.Reflection;
 
 namespace Guards
 {
+#if !DEBUG
     [DebuggerStepThrough]
+#endif
     public static partial class Guard
     {
         /// <summary>
