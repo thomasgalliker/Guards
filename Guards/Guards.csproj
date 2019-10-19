@@ -6,7 +6,7 @@
     <VersionPrefix>1.0.0</VersionPrefix>
     <Version>3.0.0</Version>
     <Authors>Thomas Galliker</Authors>
-    <TargetFrameworks>netstandard1.0;netstandard2.0;net35;net40;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;net45</TargetFrameworks>
     <AssemblyName>Guards</AssemblyName>
     <PackageId>Guards</PackageId>
     <PackageTags>Guards;guards;conditional;protection;protect;contract;contracts;</PackageTags>
@@ -15,6 +15,8 @@
     <PackageLicenseUrl>http://opensource.org/licenses/Apache-2.0</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/thomasgalliker/Guards</RepositoryUrl>
+    <NuspecFile>Guards.Sources.nuspec</NuspecFile>
+    <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
     <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
     <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.0' ">$(PackageTargetFallback);netcoreapp1.0</PackageTargetFallback>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.0' ">1.6.1</NetStandardImplicitPackageVersion>
@@ -27,15 +29,6 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <DefineConstants>$(DefineConstants);NET45</DefineConstants>
   </PropertyGroup>
-  
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <DefineConstants>$(DefineConstants);NET40</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <DefineConstants>$(DefineConstants);NET35</DefineConstants>
-    <FrameworkPathOverride Condition="'$(TargetFramework)' == 'net35'">C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
-  </PropertyGroup>
 
   <PropertyGroup>
     <ApplicationIcon />
@@ -45,34 +38,39 @@
     <Product>Guards</Product>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>Guards</RootNamespace>
-    <PackageReleaseNotes>2.0.0
-- Support for .NET Standard 2.0
-- New project structure
+    <PackageReleaseNotes>
+      2.1.0
+      - New Nuget Guards.Source which compiles in your target project
+      - Support for .NET 3.5 and 4.0 depricated
 
-1.0.15
-- Support for .NET Standard 1.0
-- Remove Silverlight support
+      2.0.0
+      - New project structure
+      - Support for .NET Standard 2.0
 
-1.0.14
-- Update AssemblyInfos
-      
-1.0.13
-- Strong-name signing of all Guards.dll assemblies
-      
-1.0.12
-- Added new Guard.ArgumentCondition
-- Added Guard.ArgumentHasLength, ArgumentHasMinLength and ArgumentHasMaxLength without property expressions
-- Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
-      
-1.0.11
-- Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
-- Internal refactoring
-</PackageReleaseNotes>
+      1.0.15
+      - Support for .NET Standard 1.0
+      - Support for Silverlight depricated
+
+      1.0.14
+      - Update AssemblyInfos
+
+      1.0.13
+      - Strong-name signing of all Guards.dll assemblies
+
+      1.0.12
+      - Added new Guard.ArgumentCondition
+      - Added Guard.ArgumentHasLength, ArgumentHasMinLength and ArgumentHasMaxLength without property expressions
+      - Platform-specific compilation for .Net Framework 3.5, 4.5 and Silverlight 5
+
+      1.0.11
+      - Issue resolve: Visual Studio 2013 could not add PCL NuGet package to compatible project due to dnxcore50 dependency
+      - Internal refactoring
+    </PackageReleaseNotes>
     <Copyright>Copyright 2019</Copyright>
     <AssemblyOriginatorKeyFile>GuardsKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35|net40|net45'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <Reference Include="System" />
   </ItemGroup>
 
@@ -80,6 +78,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
 
+  <!-- Generate all source fiels as *.cs.pp for nuget distribution-->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="PowerShell.exe -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Unrestricted .\NuGetContentGenerator.ps1 -Target $(TargetFramework)" />
   </Target>
