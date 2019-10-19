@@ -21,7 +21,7 @@ Function Get-PSScriptRoot
 
 $srcDir = Get-PSScriptRoot
 $srcDirFilter = "bin|obj"
-$dstDir = $srcDir + "\content\cs\" + $target  
+$dstDir = $srcDir + "\contentFiles\cs\" + $target  
 $csExtension = "*.cs"
 $csppExtension = ".cs.pp"
 
