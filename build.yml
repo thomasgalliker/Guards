@@ -68,7 +68,7 @@ steps:
   inputs:
     command: test
     projects: '**/*.Tests.csproj'
-    arguments: ''
+    arguments: '--no-build --configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Pack NuGet PreRelease'
