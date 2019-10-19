@@ -97,8 +97,8 @@ public void AddPerson(string name, Address address)
     Guard.ArgumentNotNull(() => address);
     
     // Example usage of guards withouot expressions
-    Guard.ArgumentNotNullOrEmpty(name, "name");
-    Guard.ArgumentNotNull(address, "address");
+    Guard.ArgumentNotNullOrEmpty(name, nameof(name));
+    Guard.ArgumentNotNull(address, nameof(address));
     
     // Further code omitted...
 }
