@@ -1,0 +1,3 @@
+Create package with specific nuspec file and version
+dotnet pack .\Guards\Guards.csproj /p:NuspecFile=Guards.Source.nuspec /p:PackageVersion=1.2.3
+
