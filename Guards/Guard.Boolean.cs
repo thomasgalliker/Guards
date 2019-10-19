@@ -6,6 +6,10 @@ namespace Guards
 {
     public static partial class Guard
     {
+        /// <summary>
+        /// Checks if the given <paramref name="value"/> is true.
+        /// </summary>
+        /// <exception cref="ArgumentException">The <paramref name="value" /> parameter is false.</exception>
         public static void ArgumentIsTrue(bool value, string paramName)
         {
             if (!value)
@@ -14,6 +18,10 @@ namespace Guards
             }
         }
 
+        /// <summary>
+        /// Checks if the given <paramref name="value"/> is false.
+        /// </summary>
+        /// <exception cref="ArgumentException">The <paramref name="value" /> parameter is true.</exception>
         public static void ArgumentIsFalse(bool value, string paramName)
         {
             if (value)
