@@ -72,12 +72,14 @@ You can use this library in any .Net project which is compatible to PCL (e.g. Xa
         Guard.ArgumentHasLength<br>
         Guard.ArgumentHasMaxLength<br>
         Guard.ArgumentHasMinLength<br>
-        Guard.ArgumentNotNullOrEmpty
+        Guard.ArgumentNotNullOrEmpty<br>
+        Guard.ArgumentNotNullOrWhiteSpace<br>
     </td>
     <td>
         ArgumentException<br>
         ArgumentException<br>
         ArgumentException<br>
+        ArgumentNullException or ArgumentException<br>
         ArgumentNullException or ArgumentException<br>
     </td>
    </tr>

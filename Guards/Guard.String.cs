@@ -33,6 +33,33 @@ namespace Guards
         }
 
         /// <summary>
+        ///     Checks if the given string is not null or whiteSpace.
+        /// </summary>
+        public static void ArgumentNotNullOrWhiteSpace([ValidatedNotNull]Expression<Func<string>> expression)
+        {
+            ArgumentNotNull(expression, nameof(expression));
+
+            var propertyValue = expression.Compile()();
+            var paramName = expression.GetMemberName();
+
+            ArgumentNotNullOrWhiteSpace(propertyValue, paramName);
+        }
+
+        /// <summary>
+        ///     Checks if the given string is not null or whiteSpace.
+        /// </summary>
+        public static void ArgumentNotNullOrWhiteSpace([ValidatedNotNull]string propertyValue, string paramName)
+        {
+            if (string.IsNullOrWhiteSpace(propertyValue))
+            {
+                ArgumentNotNull(propertyValue, paramName);
+
+                throw new ArgumentException(ExceptionMessages.ArgumentMustNotBeWhiteSpace, paramName);
+            }
+        }
+
+
+        /// <summary>
         /// Checks if the given string has the expected length
         /// </summary>
         /// <param name="expression">Property expression.</param>
@@ -120,5 +147,7 @@ namespace Guards
                 throw new ArgumentException(string.Format(ExceptionMessages.ArgumentHasMinLength, minLength, length), paramName);
             }
         }
+
+    
     }
 }

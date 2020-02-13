@@ -26,5 +26,8 @@ namespace Guards
         public const string ArgumentHasMinLength = "String must have a minimum of {0} characters. Found string of length {1}.";
 
         public const string ArgumentCondition = "Given condition \"{0}\" is not met.";
+
+        public const string ArgumentMustNotBeWhiteSpace = "Argument must not be empty or whitespace.";
+      
     }
 }
