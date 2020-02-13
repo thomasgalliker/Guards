@@ -9,6 +9,136 @@ namespace Guards.Tests
 {
     public partial class GuardTests
     {
+
+
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsIfArgumentIsNull()
+        {
+            // Arrange
+            string argumentName = "argument";
+
+            // Act
+            var ex = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(null, argumentName));
+
+            // Assert
+            ex.ParamName.Should().BeEquivalentTo(argumentName);
+            ex.Message.Should().Contain("Argument must not be null.");
+        }
+
+
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsIfArgumentIsEmpty()
+        {
+            // Arrange
+            string argumentName = "argument";
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentNotNullOrWhiteSpace(string.Empty, argumentName));
+
+            // Assert
+            ex.ParamName.Should().BeEquivalentTo(argumentName);
+            ex.Message.Should().Contain("Argument must not be empty or whitespace.");
+        }
+        
+      
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsArgumentNullExceptionIfArgumentNameIsWhiteSpace()
+        {
+            const string whiteSpace = "    ";
+            // Act
+            var expected = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(null, whiteSpace));
+
+            // Assert
+            expected.ParamName.Should().Be(whiteSpace);
+            expected.Message.Should().NotBeNullOrEmpty();
+        }
+        
+        
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsArgumentNullExceptionIfArgumentNameIsNull()
+        {
+            // Act
+            var ex1 = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(null, (string)null));
+            var ex2 = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(null, string.Empty));
+
+            // Assert
+            ex1.ParamName.Should().BeNull();
+            ex1.Message.Should().NotBeNullOrEmpty();
+
+            ex2.ParamName.Should().BeEmpty();
+            ex2.Message.Should().NotBeNullOrEmpty();
+           }
+
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsArgumentExceptionIfArgumentNameIsEmpty()
+        {
+            // Act
+            var ex1 = Assert.Throws<ArgumentException>(() => Guard.ArgumentNotNullOrWhiteSpace(string.Empty, (string)null));
+            var ex2 = Assert.Throws<ArgumentException>(() => Guard.ArgumentNotNullOrWhiteSpace(string.Empty, string.Empty));
+
+            // Assert
+            ex1.ParamName.Should().BeNull();
+            ex1.Message.Should().NotBeNullOrEmpty();
+
+            ex2.ParamName.Should().BeEmpty();
+            ex2.Message.Should().NotBeNullOrEmpty();
+        }
+
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsArgumentNullExceptionWithProvidedArgumentName()
+        {
+            // Arrange
+            string argumentName = "argument";
+
+            // Act
+            var ex = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(null, argumentName));
+
+            // Assert
+            Assert.Equal(argumentName, ex.ParamName);
+        }
+
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsArgumentExceptionWithProvidedArgumentName()
+        {
+            // Arrange
+            string argumentName = "argument";
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentNotNullOrWhiteSpace(string.Empty, argumentName));
+
+            // Assert
+            Assert.Equal(argumentName, ex.ParamName);
+        }
+
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsArgumentNullExceptionWithExpression()
+        {
+            // Arrange
+            string argument = null;
+
+            // Act
+            var ex = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(() => argument));
+
+            // Assert
+            ex.ParamName.Should().BeEquivalentTo("argument");
+            ex.Message.Should().Contain("Argument must not be null.");
+        }
+
+        [Fact]
+        public void ArgumentNotNullOrWhiteSpaceThrowsArgumentExceptionWithExpression()
+        {
+            // Arrange
+            string argument = string.Empty;
+
+            // Act
+            var ex = Assert.Throws<ArgumentException>(() => Guard.ArgumentNotNullOrWhiteSpace(() => argument));
+
+            // Assert
+            ex.ParamName.Should().BeEquivalentTo("argument");
+            ex.Message.Should().Contain("Argument must not be empty or whitespace.");
+        }
+
+
         [Fact]
         public void ArgumentNotNullOrEmptyThrowsIfArgumentIsNull()
         {
@@ -37,7 +167,7 @@ namespace Guards.Tests
             ex.ParamName.Should().BeEquivalentTo(argumentName);
             ex.Message.Should().Contain("Argument must not be empty.");
         }
-
+        
         [Fact]
         public void ArgumentNotNullOrEmptyThrowsArgumentNullExceptionIfArgumentNameIsNull()
         {
@@ -153,7 +283,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExcepectedWithExpression()
+        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExpectedWithExpression()
         {
             // Arrange
             string argument = "123456789";
@@ -168,7 +298,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExcepected()
+        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExpected()
         {
             // Arrange
             string argument = "123456789";
@@ -183,7 +313,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExcepected()
+        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExpected()
         {
             // Arrange
             string argument = "12";
@@ -198,7 +328,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExcepectedWithExpression()
+        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExpectedWithExpression()
         {
             // Arrange
             string argument = "12";

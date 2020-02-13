@@ -72,12 +72,14 @@ You can use this library in any .Net project which is compatible to PCL (e.g. Xa
         Guard.ArgumentHasLength<br>
         Guard.ArgumentHasMaxLength<br>
         Guard.ArgumentHasMinLength<br>
-        Guard.ArgumentNotNullOrEmpty
+        Guard.ArgumentNotNullOrEmpty<br>
+        Guard.ArgumentNotNullOrWhiteSpace<br>
     </td>
     <td>
         ArgumentException<br>
         ArgumentException<br>
         ArgumentException<br>
+        ArgumentNullException or ArgumentException<br>
         ArgumentNullException or ArgumentException<br>
     </td>
    </tr>
@@ -96,7 +98,7 @@ public void AddPerson(string name, Address address)
     Guard.ArgumentNotNullOrEmpty(() => name);
     Guard.ArgumentNotNull(() => address);
     
-    // Example usage of guards withouot expressions
+    // Example usage of guards without expressions
     Guard.ArgumentNotNullOrEmpty(name, nameof(name));
     Guard.ArgumentNotNull(address, nameof(address));
     
