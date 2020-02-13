@@ -57,7 +57,6 @@ namespace Guards.Tests
         [Fact]
         public void ArgumentNotNullOrWhiteSpaceThrowsArgumentNullExceptionIfArgumentNameIsNull()
         {
-            const string whiteSpace = "    ";
             // Act
             var ex1 = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(null, (string)null));
             var ex2 = Assert.Throws<ArgumentNullException>(() => Guard.ArgumentNotNullOrWhiteSpace(null, string.Empty));
