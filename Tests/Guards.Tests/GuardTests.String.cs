@@ -153,7 +153,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExcepectedWithExpression()
+        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExpectedWithExpression()
         {
             // Arrange
             string argument = "123456789";
@@ -168,7 +168,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExcepected()
+        public void ArgumentHasMaxLengthThrowsIfStringIsLongerThanExpected()
         {
             // Arrange
             string argument = "123456789";
@@ -183,7 +183,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExcepected()
+        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExpected()
         {
             // Arrange
             string argument = "12";
@@ -198,7 +198,7 @@ namespace Guards.Tests
         }
 
         [Fact]
-        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExcepectedWithExpression()
+        public void ArgumentHasMinLengthThrowsIfStringIsLongerThanExpectedWithExpression()
         {
             // Arrange
             string argument = "12";
