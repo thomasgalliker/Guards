@@ -237,3 +237,5 @@ _Pvt_Extensions
 *.bak
 /Guards/content/cs
 /Guards/contentFiles/cs
+*.ncrunchsolution
+*.ncrunchproject
